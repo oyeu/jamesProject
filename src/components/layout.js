@@ -5,43 +5,60 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import { StaticQuery, graphql, Link } from "gatsby";
+import "./layout.css";
+import styled from "styled-components";
 
-import Header from "./header"
-import "./layout.css"
+const Main = styled.main`
+  max-width: 800px;
+  margin: 0 auto
+`
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
+const navigationQuery = graphql`
+{prismic {
+  allNavigations {
+    edges {
+      node {
+        navigation_links {
+          label
+          link {
+            ... on PRISMIC_Page {
+              _meta {
+                uid
+              }
+            }
+          }
         }
       }
     }
-  `)
+  }
+}
+}
+`
 
+const NavLink = styled.div``;
+
+const Layout = ({ children }) => {
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
+        <StaticQuery 
+          query={navigationQuery}
+          render={(data)=>{
+            console.log(data);
+            return data.prismic.allNavigations.edges[0].node.navigation_links.map((link) =>{
+              return( 
+              <NavLink key={link.link._meta.uid}>
+                <Link to={`/${link.link._meta.uid}`}>
+                  {link.label}
+                </Link>
+              </NavLink>
+              )
+            })
+          }}
+        />
+        <Main>{children}</Main>
     </>
   )
 }
