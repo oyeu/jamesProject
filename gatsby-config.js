@@ -5,6 +5,8 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    'gatsby-plugin-typescript',
+    'gatsby-plugin-tslint',
     'gatsby-plugin-styled-components',
     {
       resolve:'@prismicio/gatsby-source-prismic-graphql',
@@ -14,7 +16,7 @@ module.exports = {
           type:'Page',
           match:'/:uid',
           path:'/',
-          component: require.resolve('./src/templates/page.js')
+          component: require.resolve('./src/templates/page.tsx')
         }]
       }
     },

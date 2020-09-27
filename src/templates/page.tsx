@@ -1,7 +1,7 @@
 import React from 'react';
-import {graphql} from 'gatsby';
+import {graphql, PageProps} from 'gatsby';
 import {RichText} from 'prismic-reactjs'
-import Layout from '../components/Layout'
+import Layout from '../components/layout';
 
 
 export const query = graphql`
@@ -21,7 +21,14 @@ query PageQuery($id: String){
     }
 }
 `
-const Page = (props) =>{
+
+interface Props extends PageProps{
+    data:{
+        prismic:any
+    }
+}
+
+const Page = (props:Props) =>{
     const pageTitle = props.data.prismic.allPages.edges[0].node.page_title;
     return(
         <Layout>
