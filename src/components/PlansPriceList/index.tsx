@@ -7,8 +7,8 @@ const PriceListWrapper = styled.section`
   text-align: center;
   margin: 40px auto;
 
-  >div:last-child {
-      display:flex;
+  > div:last-child {
+    display: flex;
   }
 `
 
@@ -19,14 +19,14 @@ const PriceList = ({ title, priceItems }: any) => {
 
       <div className="">
         {priceItems.map((priceItem: any, i: number) => {
-            return (
+          return (
             <PriceItem
-                key={i}
-                price={priceItem.price}
-                title={priceItem.pricelist_title}
-                pricexxx={priceItem.pricexxx}
+              key={i}
+              price={priceItem.price}
+              title={priceItem.pricelist_title}
+              pricexxx={priceItem.pricexxx}
             />
-            )
+          )
         })}
       </div>
     </PriceListWrapper>

@@ -50,12 +50,13 @@ const ContactPage = (props: any) => {
           props.data.prismic.allContact_pages.edges[0].node.form_description
         }
       />
-      <Form 
-        name='contact-us'
+      <Form
+        name="contact-us"
         method="POST"
         data-netlify="true"
-        action="/contact-success">
-          <input type='hidden' name="form-name" value="contact-us"/>
+        action="/contact-success"
+      >
+        <input type="hidden" name="form-name" value="contact-us" />
         {props.data.prismic.allContact_pages.edges[0].node.form_fields.map(
           (field: any, i: any) => {
             if (field.field_type === "textArea") {

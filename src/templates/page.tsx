@@ -64,7 +64,7 @@ const Page = (props: any) => {
         <div className="plans_description">
           <RichText render={pageContent.content} />
         </div>
-        {pageContent.body.map((pricelist: any, i: any) => {
+        {pageContent.body?.map((pricelist: any, i: any) => {
           return (
             <PriceList
               key={i}
