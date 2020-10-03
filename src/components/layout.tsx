@@ -26,6 +26,16 @@ const navigationQuery = graphql`
                     uid
                   }
                 }
+                ... on PRISMIC_Homepage {
+                  _meta {
+                    uid
+                  }
+                }
+                ... on PRISMIC_Contact_page {
+                  _meta {
+                    uid
+                  }
+                }
               }
             }
           }
@@ -101,7 +111,7 @@ const Layout = ({ children }: Props) => {
         <StaticQuery
           query={navigationQuery}
           render={data => {
-            // console.log(data)
+            console.log(data)
             return (
               <>
                 <Branding>
@@ -110,13 +120,24 @@ const Layout = ({ children }: Props) => {
                 <NavLinks>
                   {data.prismic.allNavigations.edges[0].node.navigation_links.map(
                     (link: Links) => {
-                      return (
-                        <NavLink key={link.link._meta.uid}>
+                      if (link.link._meta.uid==="inicio") {
+                        return(
+                          <NavLink key={link.link._meta.uid}>
+                            <Link to={`/`}>
+                              {link.label}
+                            </Link>
+                          </NavLink>
+                        )
+                      }
+                      else {
+                        return(
+                          <NavLink key={link.link._meta.uid}>
                           <Link to={`/${link.link._meta.uid}`}>
                             {link.label}
                           </Link>
-                        </NavLink>
-                      )
+                          </NavLink>
+                        )
+                      }
                     }
                   )}
                 </NavLinks>
