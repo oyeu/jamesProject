@@ -5,7 +5,8 @@ import CallToActionBlock from "./callToActionBlock"
 
 const CallToActionGridWrapper = styled.section`
   max-width: 800px;
-  margin: 0 auto;
+  margin: auto;
+  padding-bottom: 20px;
 
   .call_to_action_section_title {
     color:white;
