@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import RichText from "../RichText"
+import RichText from "../../../RichText"
 
 const PriceItemWrapper = styled.div`
   flex-grow: 1;

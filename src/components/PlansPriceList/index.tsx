@@ -1,7 +1,7 @@
 import React from "react"
 import RichText from "../RichText"
 import styled from "styled-components"
-import PriceItem from "../PlansPriceItem"
+import PriceItem from "./components/PlansPriceItem"
 
 const PriceListWrapper = styled.section`
   text-align: center;

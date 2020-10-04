@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import RichText from "./RichText"
-import CallToActionBlock from "./callToActionBlock"
+import RichText from "../../../RichText"
+import CallToActionBlock from "./components/CallToActionBlock"
 
 const CallToActionGridWrapper = styled.section`
   max-width: 800px;

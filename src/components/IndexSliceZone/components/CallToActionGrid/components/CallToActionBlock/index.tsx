@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import RichText from "./RichText"
+import RichText from "../../../../../RichText"
 import { Link } from "gatsby"
 
 const CallToActionBlockWrapper = styled.section`

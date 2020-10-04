@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import SliceZone from "../components/sliceZone"
+import Layout from "../components/Layout"
+import SliceZone from "../components/IndexSliceZone"
 
 export const query = graphql`
   {
@@ -13,11 +13,11 @@ export const query = graphql`
             body {
               ... on PRISMIC_HomepageBodyMainslice {
                 type
-                label
                 primary {
                   home_main_slice_content
                   home_main_slice_title
                   main_slide_image
+                  logo
                 }
               }
               ... on PRISMIC_HomepageBodyCall_to_action_grid {

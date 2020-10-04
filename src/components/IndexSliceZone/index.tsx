@@ -1,7 +1,6 @@
 import React from "react"
-import MainSlide from "./mainSlide"
-import CallToActionGrid from "./callToActionGrid"
-import PriceList from "./priceList"
+import MainSlide from "./components/MainSlide"
+import CallToActionGrid from "./components/CallToActionGrid"
 
 const SliceZone = ({ body }: any) => {
   // console.log(body)
@@ -14,6 +13,7 @@ const SliceZone = ({ body }: any) => {
               title={bodyContent.primary.home_main_slice_title}
               content={bodyContent.primary.home_main_slice_content}
               backgroundImage={bodyContent.primary.main_slide_image.url}
+              logo={bodyContent.primary.logo.url}
               key={i}
             />
           )
@@ -25,15 +25,7 @@ const SliceZone = ({ body }: any) => {
               callToActions={bodyContent.fields}
             />
           )
-        } /* else if (bodyContent.type === "pricelist_") {
-          return (
-            <PriceList
-              title={bodyContent.primary.title}
-              key={i}
-              prices={bodyContent.fields}
-            />
-          )
-        } */ else {
+        } else {
           return null
         }
       })}
