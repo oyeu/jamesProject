@@ -58,14 +58,13 @@ const Form = styled.form`
 `
 
 const PageWrapper = styled.section`
-  color:white;
+  color: white;
   margin: 0 auto;
   max-width: 800px;
-  height:100vh;
- 
-  
-  .form-title{
-    text-align:center;
+  height: 100vh;
+
+  .form-title {
+    text-align: center;
   }
 
   .form-description {
@@ -80,47 +79,55 @@ const ContactPage = (props: any) => {
   return (
     <Layout>
       <PageWrapper>
-        <div className='form-title'>
-          <RichText render={props.data.prismic.allContact_pages.edges[0].node.form_title}/>
-        </div>
-        <div className='form-description'>
-          <RichText render={props.data.prismic.allContact_pages.edges[0].node.form_description}/>
-        </div>
-      <FormWrapper>
-      <Form
-        name="contact-us"
-        method="POST"
-        data-netlify="true"
-        action="/contact-success"
-      >
-        <input type="hidden" name="form-name" value="contact-us" />
-        {props.data.prismic.allContact_pages.edges[0].node.form_fields.map(
-          (field: any, i: any) => {
-            if (field.field_type === "textArea") {
-              return (
-                <div key={i}>
-                  <textarea
-                    required={field.required === "yes"}
-                    placeholder={field.field_name}
-                  />
-                </div>
-              )
-            } else {
-              return (
-                <div key={i}>
-                  <input
-                    required={field.required === "yes"}
-                    placeholder={field.field_name}
-                    type={field.field_type}
-                  />
-                </div>
-              )
+        <div className="form-title">
+          <RichText
+            render={
+              props.data.prismic.allContact_pages.edges[0].node.form_title
             }
-          }
-        )}
-        <Button type="submit">Enviar</Button>
-      </Form>
-      </FormWrapper>
+          />
+        </div>
+        <div className="form-description">
+          <RichText
+            render={
+              props.data.prismic.allContact_pages.edges[0].node.form_description
+            }
+          />
+        </div>
+        <FormWrapper>
+          <Form
+            name="contact-us"
+            method="POST"
+            data-netlify="true"
+            action="/contact-success"
+          >
+            <input type="hidden" name="form-name" value="contact-us" />
+            {props.data.prismic.allContact_pages.edges[0].node.form_fields.map(
+              (field: any, i: any) => {
+                if (field.field_type === "textArea") {
+                  return (
+                    <div key={i}>
+                      <textarea
+                        required={field.required === "yes"}
+                        placeholder={field.field_name}
+                      />
+                    </div>
+                  )
+                } else {
+                  return (
+                    <div key={i}>
+                      <input
+                        required={field.required === "yes"}
+                        placeholder={field.field_name}
+                        type={field.field_type}
+                      />
+                    </div>
+                  )
+                }
+              }
+            )}
+            <Button type="submit">Enviar</Button>
+          </Form>
+        </FormWrapper>
       </PageWrapper>
     </Layout>
   )

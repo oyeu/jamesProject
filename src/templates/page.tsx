@@ -47,7 +47,7 @@ const PageWrapper = styled.section`
     text-align: center;
   }
 
-  >div:last-child {
+  > div:last-child {
     padding-bottom: 20px;
   }
 `
@@ -69,15 +69,15 @@ const Page = (props: any) => {
           <RichText render={pageContent.content} />
         </div>
         <div>
-        {pageContent.body?.map((pricelist: any, i: any) => {
-          return (
-            <PriceList
-              key={i}
-              title={pricelist.primary.title}
-              priceItems={pricelist.fields}
-            />
-          )
-        })}
+          {pageContent.body?.map((pricelist: any, i: any) => {
+            return (
+              <PriceList
+                key={i}
+                title={pricelist.primary.title}
+                priceItems={pricelist.fields}
+              />
+            )
+          })}
         </div>
       </PageWrapper>
     </Layout>

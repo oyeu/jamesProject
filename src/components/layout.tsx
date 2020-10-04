@@ -100,7 +100,9 @@ const Branding = styled.div`
     0 0 180px rgba(38, 104, 127, 1);
   
   .branding {
-  
+    a {
+      color:inherit;
+    }
   }
   
   .subranding {
@@ -159,7 +161,9 @@ const Layout = ({ children }: Props) => {
                   <img src={headerContent.logo.url} alt="logo header" />
                 </LogoHeader>
                 <Branding>
-                  <div className="branding">{headerContent.branding}</div>
+                  <div className="branding">
+                    <Link to='/'>{headerContent.branding}</Link>
+                  </div>
                   <div className="subranding">{headerContent.subranding}</div>
                 </Branding>
                 <NavLinks>
