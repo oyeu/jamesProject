@@ -107,6 +107,7 @@ const ContactPage = (props: any) => {
                   return (
                     <div key={i}>
                       <textarea
+                        name={field.field_name}
                         required={field.required === "yes"}
                         placeholder={field.field_name}
                       />
@@ -116,6 +117,7 @@ const ContactPage = (props: any) => {
                   return (
                     <div key={i}>
                       <input
+                        name={field.field_name}
                         required={field.required === "yes"}
                         placeholder={field.field_name}
                         type={field.field_type}
