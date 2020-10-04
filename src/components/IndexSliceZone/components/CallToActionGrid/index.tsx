@@ -4,7 +4,7 @@ import RichText from "../../../RichText"
 import CallToActionBlock from "./components/CallToActionBlock"
 
 const CallToActionGridWrapper = styled.section`
-  max-width: 800px;
+  max-width: 1000px;
   margin: auto;
   padding-bottom: 20px;
 
