@@ -59,12 +59,12 @@ const NavLink = styled.div`
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
-    
+
     text-shadow: 0 0 5px rgba(0, 178, 255, 1), 0 0 10px rgba(0, 178, 255, 1),
-    0 0 20px rgba(0, 178, 255, 1), 0 0 40px rgba(38, 104, 127, 1),
-    0 0 80px rgba(38, 104, 127, 1), 0 0 90px rgba(38, 104, 127, 1),
-    0 0 100px rgba(38, 104, 127, 1), 0 0 140px rgba(38, 104, 127, 1),
-    0 0 180px rgba(38, 104, 127, 1);
+      0 0 20px rgba(0, 178, 255, 1), 0 0 40px rgba(38, 104, 127, 1),
+      0 0 80px rgba(38, 104, 127, 1), 0 0 90px rgba(38, 104, 127, 1),
+      0 0 100px rgba(38, 104, 127, 1), 0 0 140px rgba(38, 104, 127, 1),
+      0 0 180px rgba(38, 104, 127, 1);
 
     &:hover {
       color: #fff;
@@ -75,9 +75,10 @@ const NavLink = styled.div`
 const Header = styled.header`
   display: flex;
   background: #000f38;
-  height: 50px;
+  height: 80px;
   padding: 0 16px;
   box-sizing: border-box;
+  
 `
 const NavLinks = styled.div`
   margin-left: auto;
@@ -131,15 +132,15 @@ interface Props {
 }
 
 const LogoHeader = styled.div`
-  display:flex;
+  display: flex;
 
-  img{
+  img {
     border: 1px solid #ddd;
-    display:block;
-    margin:auto;
-    width:100%;
-    height:auto;
-    border-radius:20px;
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
   }
 `
 
@@ -150,44 +151,35 @@ const Layout = ({ children }: Props) => {
         <StaticQuery
           query={navigationQuery}
           render={data => {
-            let headerContent = data.prismic.allNavigations.edges[0].node
-            console.log(data)
+            const headerContent = data.prismic.allNavigations.edges[0].node
+            // console.log(data)
             return (
               <>
-                <LogoHeader >
-                  <img src={headerContent.logo.url} alt='logo header'/>
+                <LogoHeader>
+                  <img src={headerContent.logo.url} alt="logo header" />
                 </LogoHeader>
                 <Branding>
-                  <div className='branding'>
-                    {headerContent.branding}
-                  </div> 
-                  <div className='subranding'>
-                    {headerContent.subranding}
-                  </div>
+                  <div className="branding">{headerContent.branding}</div>
+                  <div className="subranding">{headerContent.subranding}</div>
                 </Branding>
                 <NavLinks>
-                  {headerContent.navigation_links.map(
-                    (link: Links) => {
-                      if (link.link._meta.uid==="inicio") {
-                        return(
-                          <NavLink key={link.link._meta.uid}>
-                            <Link to={`/`}>
-                              {link.label}
-                            </Link>
-                          </NavLink>
-                        )
-                      }
-                      else {
-                        return(
-                          <NavLink key={link.link._meta.uid}>
+                  {headerContent.navigation_links.map((link: Links) => {
+                    if (link.link._meta.uid === "inicio") {
+                      return (
+                        <NavLink key={link.link._meta.uid}>
+                          <Link to={`/`}>{link.label}</Link>
+                        </NavLink>
+                      )
+                    } else {
+                      return (
+                        <NavLink key={link.link._meta.uid}>
                           <Link to={`/${link.link._meta.uid}`}>
                             {link.label}
                           </Link>
-                          </NavLink>
-                        )
-                      }
+                        </NavLink>
+                      )
                     }
-                  )}
+                  })}
                 </NavLinks>
               </>
             )

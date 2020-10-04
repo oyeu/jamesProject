@@ -46,6 +46,10 @@ const PageWrapper = styled.section`
   .page_title {
     text-align: center;
   }
+
+  >div:last-child {
+    padding-bottom: 20px;
+  }
 `
 
 const Page = (props: any) => {
@@ -64,6 +68,7 @@ const Page = (props: any) => {
         <div className="plans_description">
           <RichText render={pageContent.content} />
         </div>
+        <div>
         {pageContent.body?.map((pricelist: any, i: any) => {
           return (
             <PriceList
@@ -73,6 +78,7 @@ const Page = (props: any) => {
             />
           )
         })}
+        </div>
       </PageWrapper>
     </Layout>
   )

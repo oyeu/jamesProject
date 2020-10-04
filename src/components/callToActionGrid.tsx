@@ -9,8 +9,8 @@ const CallToActionGridWrapper = styled.section`
   padding-bottom: 20px;
 
   .call_to_action_section_title {
-    color:white;
-    text-align:center;
+    color: white;
+    text-align: center;
     margin: 20px auto;
   }
 `

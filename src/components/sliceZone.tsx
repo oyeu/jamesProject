@@ -25,7 +25,7 @@ const SliceZone = ({ body }: any) => {
               callToActions={bodyContent.fields}
             />
           )
-        }/* else if (bodyContent.type === "pricelist_") {
+        } /* else if (bodyContent.type === "pricelist_") {
           return (
             <PriceList
               title={bodyContent.primary.title}
@@ -33,7 +33,7 @@ const SliceZone = ({ body }: any) => {
               prices={bodyContent.fields}
             />
           )
-        } */else {
+        } */ else {
           return null
         }
       })}

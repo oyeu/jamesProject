@@ -10,6 +10,7 @@ const PriceItemWrapper = styled.div`
   padding: 10px;
   color: black;
   position: relative;
+  
 `
 
 const Button = styled.button`
