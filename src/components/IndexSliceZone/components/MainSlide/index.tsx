@@ -2,8 +2,6 @@ import React from "react"
 import RichText from "../../../RichText"
 import styled from "styled-components"
 
-const Content = styled.p``
-const Title = styled.div``
 interface Props {
   backgroundImage: any
 }

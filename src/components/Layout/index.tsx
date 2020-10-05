@@ -37,6 +37,11 @@ const navigationQuery = graphql`
                     uid
                   }
                 }
+                ... on PRISMIC_Manual_page {
+                  _meta {
+                    uid
+                  }
+                }
               }
             }
           }

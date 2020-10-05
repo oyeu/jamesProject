@@ -33,6 +33,7 @@ const Button = styled.div`
   border-radius: 4px;
   color: white;
   cursor: pointer;
+  width:100%;
 
   a {
     color: white;

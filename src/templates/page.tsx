@@ -1,10 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { RichText } from "prismic-reactjs"
 import Layout from "../components/Layout"
 // import { PagePropsWithPrismic } from "../@types/prismic"
 import styled from "styled-components"
 import PriceList from "../components/PlansPriceList"
+import PlanPageContent from "../components/PlansPageContent"
 
 export const query = graphql`
   query PageQuery($id: String) {
@@ -12,6 +12,10 @@ export const query = graphql`
       allPages(id: $id) {
         edges {
           node {
+            background_image
+            service_image_1
+            service_image_2
+            service_image_3
             page_title
             subtitle
             content
@@ -39,12 +43,11 @@ export const query = graphql`
   }
 `
 const PageWrapper = styled.section`
-  max-width: 1200px;
-  margin: 0 auto;
   color: white;
 
-  .page_title {
-    text-align: center;
+  .pricelist-wrapper {
+    max-width:1200px;
+    margin: 0 auto;
   }
 
   > div:last-child {
@@ -59,16 +62,16 @@ const Page = (props: any) => {
   return (
     <Layout>
       <PageWrapper>
-        <div className="page_title">
-          <RichText render={pageContent.page_title} />
-        </div>
-        <div className="page_subtitle">
-          <RichText render={pageContent.subtitle} />
-        </div>
-        <div className="plans_description">
-          <RichText render={pageContent.content} />
-        </div>
-        <div>
+        <PlanPageContent 
+          title = {pageContent.page_title}
+          subtitle = {pageContent.subtitle}
+          content = {pageContent.content}
+          image1 = {pageContent.service_image_1.url}
+          image2 = {pageContent.service_image_2.url}
+          image3 = {pageContent.service_image_3.url}
+          backgroundImage = {pageContent.background_image.url}
+        />
+        <div className='pricelist-wrapper'>
           {pageContent.body?.map((pricelist: any, i: any) => {
             return (
               <PriceList
