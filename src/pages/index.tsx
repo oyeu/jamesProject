@@ -30,6 +30,11 @@ export const query = graphql`
                         uid
                       }
                     }
+                    ... on PRISMIC_Coverage_page {
+                      _meta {
+                        uid
+                      }
+                    }
                   }
                   button_label
                   call_to_action_title
