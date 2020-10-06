@@ -9,6 +9,8 @@ import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 import "./layout.css"
 import styled from "styled-components"
+import Headroom from "react-headroom"
+import DemoButton from "../DemoButton"
 
 const navigationQuery = graphql`
   {
@@ -80,10 +82,10 @@ const NavLink = styled.div`
 const Header = styled.header`
   display: flex;
   background: #000f38;
-  height: 80px;
+  height: auto;
   padding: 0 16px;
   box-sizing: border-box;
-  
+  z-index: 3;
 `
 const NavLinks = styled.div`
   margin-left: auto;
@@ -144,8 +146,8 @@ const LogoHeader = styled.div`
   img {
     border: 1px solid #ddd;
     display: block;
-    margin: auto;
-    width: 100%;
+    max-width: 200px;
+    margin: 20px;
     height: auto;
     border-radius: 20px;
   }
@@ -154,47 +156,50 @@ const LogoHeader = styled.div`
 const Layout = ({ children }: Props) => {
   return (
     <>
-      <Header>
-        <StaticQuery
-          query={navigationQuery}
-          render={data => {
-            const headerContent = data.prismic.allNavigations.edges[0].node
-            // console.log(data)
-            return (
-              <>
-                <LogoHeader>
-                  <img src={headerContent.logo.url} alt="logo header" />
-                </LogoHeader>
-                <Branding>
-                  <div className="branding">
-                    <Link to='/'>{headerContent.branding}</Link>
-                  </div>
-                  <div className="subranding">{headerContent.subranding}</div>
-                </Branding>
-                <NavLinks>
-                  {headerContent.navigation_links.map((link: Links) => {
-                    if (link.link._meta.uid === "inicio") {
-                      return (
-                        <NavLink key={link.link._meta.uid}>
-                          <Link to={`/`}>{link.label}</Link>
-                        </NavLink>
-                      )
-                    } else {
-                      return (
-                        <NavLink key={link.link._meta.uid}>
-                          <Link to={`/${link.link._meta.uid}`}>
-                            {link.label}
-                          </Link>
-                        </NavLink>
-                      )
-                    }
-                  })}
-                </NavLinks>
-              </>
-            )
-          }}
-        />
-      </Header>
+      <Headroom>
+        <Header>
+          <StaticQuery
+            query={navigationQuery}
+            render={data => {
+              const headerContent = data.prismic.allNavigations.edges[0].node
+              // console.log(data)
+              return (
+                <>
+                  <LogoHeader>
+                    <img src={headerContent.logo.url} alt="logo header" />
+                  </LogoHeader>
+                  <Branding>
+                    <div className="branding">
+                      <Link to="/">{headerContent.branding}</Link>
+                    </div>
+                    <div className="subranding">{headerContent.subranding}</div>
+                  </Branding>
+                  <NavLinks>
+                    <DemoButton type="header" />
+                    {headerContent.navigation_links.map((link: Links) => {
+                      if (link.link._meta.uid === "inicio") {
+                        return (
+                          <NavLink key={link.link._meta.uid}>
+                            <Link to={`/`}>{link.label}</Link>
+                          </NavLink>
+                        )
+                      } else {
+                        return (
+                          <NavLink key={link.link._meta.uid}>
+                            <Link to={`/${link.link._meta.uid}`}>
+                              {link.label}
+                            </Link>
+                          </NavLink>
+                        )
+                      }
+                    })}
+                  </NavLinks>
+                </>
+              )
+            }}
+          />
+        </Header>
+      </Headroom>
       <Main>{children}</Main>
     </>
   )

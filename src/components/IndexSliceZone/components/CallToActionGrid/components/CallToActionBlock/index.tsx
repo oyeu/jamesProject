@@ -33,13 +33,14 @@ const Button = styled.div`
   border-radius: 4px;
   color: white;
   cursor: pointer;
-  width:100%;
+  width: 100%;
 
   a {
     color: white;
     text-decoration: none;
     padding: 4px 8px;
     display: inline-block;
+    width: 100%;
   }
 `
 

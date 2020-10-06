@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import styled from "styled-components"
-import {Link} from "gatsby"
+import { Link } from "gatsby"
 
 const PageWrapper = styled.div`
   text-align: center;
@@ -14,7 +14,7 @@ const ThankYouMessage = styled.div`
   padding: 40px;
 
   a {
-    color:inherit;
+    color: inherit;
   }
 `
 
@@ -25,9 +25,7 @@ const ContactSuccess = () => {
         <ThankYouMessage>
           <h1>¡Gracias por comunicarte con nosotros!</h1>
           <h2>Nos estaremos comunicando contigo en breve</h2>
-          <Link to='/'>
-            Volver al inicio
-          </Link>
+          <Link to="/">Volver al inicio</Link>
         </ThankYouMessage>
       </PageWrapper>
     </Layout>

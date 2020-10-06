@@ -1,6 +1,7 @@
 import React from "react"
 import RichText from "../../../RichText"
 import styled from "styled-components"
+import DemoButton from "../../../DemoButton"
 
 interface Props {
   backgroundImage: any
@@ -17,43 +18,40 @@ const SliceWrapper = styled.section<Props>`
   color: white;
 
   div {
-    display:inherit;
+    display: inherit;
     max-width: 1000px;
     margin: 0 auto;
-    
+
     .logo {
-      display:flex;
+      display: flex;
       max-width: 250px;
-      img{
-        margin:auto;
+      img {
+        margin: auto;
       }
     }
 
     .slide-content {
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       margin: 0 auto;
       background: rgba(0, 0, 0, 0.5);
 
-      h1{
-        margin:0px;
+      h1 {
+        margin: 0px;
       }
     }
-    
   }
 `
 
-const mainSlide = ({ title, content, backgroundImage,logo }: any) => {
+const mainSlide = ({ title, content, backgroundImage }: any) => {
   return (
     <SliceWrapper backgroundImage={backgroundImage}>
       <div>
-        <div className='slide-content'>
-            <RichText render={title} />
-            {content}
-        </div>
-        <div className='logo'>
-          <img src={logo}/>
+        <div className="slide-content">
+          <RichText render={title} />
+          {content}
+          <DemoButton type={"main-slide"} />
         </div>
       </div>
     </SliceWrapper>

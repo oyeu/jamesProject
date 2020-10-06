@@ -46,7 +46,7 @@ const PageWrapper = styled.section`
   color: white;
 
   .pricelist-wrapper {
-    max-width:1200px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 
@@ -62,16 +62,16 @@ const Page = (props: any) => {
   return (
     <Layout>
       <PageWrapper>
-        <PlanPageContent 
-          title = {pageContent.page_title}
-          subtitle = {pageContent.subtitle}
-          content = {pageContent.content}
-          image1 = {pageContent.service_image_1.url}
-          image2 = {pageContent.service_image_2.url}
-          image3 = {pageContent.service_image_3.url}
-          backgroundImage = {pageContent.background_image.url}
+        <PlanPageContent
+          title={pageContent.page_title}
+          subtitle={pageContent.subtitle}
+          content={pageContent.content}
+          image1={pageContent.service_image_1.url}
+          image2={pageContent.service_image_2.url}
+          image3={pageContent.service_image_3.url}
+          backgroundImage={pageContent.background_image.url}
         />
-        <div className='pricelist-wrapper'>
+        <div className="pricelist-wrapper">
           {pageContent.body?.map((pricelist: any, i: any) => {
             return (
               <PriceList

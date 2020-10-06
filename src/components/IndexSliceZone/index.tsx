@@ -13,7 +13,6 @@ const SliceZone = ({ body }: any) => {
               title={bodyContent.primary.home_main_slice_title}
               content={bodyContent.primary.home_main_slice_content}
               backgroundImage={bodyContent.primary.main_slide_image.url}
-              logo={bodyContent.primary.logo.url}
               key={i}
             />
           )
