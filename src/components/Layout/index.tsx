@@ -11,6 +11,7 @@ import "./layout.css"
 import styled from "styled-components"
 import Headroom from "react-headroom"
 import DemoButton from "../DemoButton"
+import "bootstrap/dist/css/bootstrap.min.css"
 
 const navigationQuery = graphql`
   {
@@ -85,7 +86,6 @@ const Header = styled.header`
   height: auto;
   padding: 0 16px;
   box-sizing: border-box;
-  z-index: 3;
 `
 const NavLinks = styled.div`
   margin-left: auto;

@@ -75,7 +75,7 @@ const FormWrapper = styled.div`
 `
 
 const ContactPage = (props: any) => {
-  console.log(props)
+  // console.log(props)
   return (
     <Layout>
       <PageWrapper>

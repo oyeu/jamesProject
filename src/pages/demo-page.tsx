@@ -81,7 +81,6 @@ const DemoPageWrapper = styled.section<any>`
 
 const DemoPage = (props: any) => {
   const pageContent = props.data.prismic.allDems.edges[0].node
-  console.log(pageContent)
   return (
     <Layout>
       <DemoPageWrapper backgroundImage={pageContent.background_image.url}>

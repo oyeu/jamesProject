@@ -28,6 +28,7 @@ const CallToActionBlockWrapper = styled.section`
 `
 
 const Button = styled.div`
+  text-align: center;
   background: #000f38;
   display: inline-block;
   border-radius: 4px;

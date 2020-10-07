@@ -56,7 +56,7 @@ const PageWrapper = styled.section`
 `
 
 const Page = (props: any) => {
-  console.log(props)
+  // console.log(props)
 
   const pageContent = props.data.prismic.allPages.edges[0].node
   return (
