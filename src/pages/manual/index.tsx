@@ -49,7 +49,7 @@ const ManualPage = (props: any) => {
       <ManualPageWrapper>
         <MainContent
           mainText={pageContent.content}
-          iptvApps={pageContent.iptvapps}
+          iptv_Apps={pageContent.iptvapps}
         />
         <QuestionList
           title={pageContent.questions_title}
