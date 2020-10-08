@@ -42,8 +42,8 @@ const ManualPageWrapper = styled.div`
 `
 
 const ManualPage = (props: any) => {
-  let pageContent = props.data.prismic.allManual_pages.edges[0].node
-  console.log(pageContent);
+  const pageContent = props.data.prismic.allManual_pages.edges[0].node
+  console.log('prueba',pageContent);
   
   return (
     <Layout>

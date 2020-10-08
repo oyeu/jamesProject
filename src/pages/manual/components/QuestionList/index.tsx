@@ -22,7 +22,7 @@ const QuestionList = ({ title, questions }: any) => {
         <RichText render={title} />
       </div>
       <Accordion>
-        {questions.map((qItem: any, i: any) => {
+        {questions?.map((qItem: any, i: any) => {
           return (
             <Card key={i}>
               <Accordion.Toggle as={Card.Header} eventKey={i}>
