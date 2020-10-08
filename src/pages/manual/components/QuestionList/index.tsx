@@ -24,11 +24,14 @@ const QuestionList = ({ title, questions }: any) => {
       <Accordion>
         {questions?.map((qItem: any) => {
           return (
-            <Card key={qItem.question}>
-              <Accordion.Toggle as={Card.Header} eventKey={qItem.question}>
+            <Card key={qItem.question[0].text}>
+              <Accordion.Toggle
+                as={Card.Header}
+                eventKey={qItem.question[0].text}
+              >
                 <RichText render={qItem.question} />
               </Accordion.Toggle>
-              <Accordion.Collapse eventKey={qItem.question}>
+              <Accordion.Collapse eventKey={qItem.question[0].text}>
                 <Card.Body>
                   <RichText render={qItem.answer} />
                 </Card.Body>
