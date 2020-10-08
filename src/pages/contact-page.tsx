@@ -3,6 +3,8 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import styled from "styled-components"
 import RichText from "../components/RichText"
+import PageTitleSection from "../components/PageTitleSection"
+import Page from "../templates/page"
 
 export const query = graphql`
   {
@@ -63,10 +65,6 @@ const PageWrapper = styled.section`
   max-width: 800px;
   height: 100vh;
 
-  .form-title {
-    text-align: center;
-  }
-
   .form-description {
   }
 `
@@ -78,14 +76,10 @@ const ContactPage = (props: any) => {
   // console.log(props)
   return (
     <Layout>
+      <PageTitleSection
+        title={props.data.prismic.allContact_pages.edges[0].node.form_title}
+      />
       <PageWrapper>
-        <div className="form-title">
-          <RichText
-            render={
-              props.data.prismic.allContact_pages.edges[0].node.form_title
-            }
-          />
-        </div>
         <div className="form-description">
           <RichText
             render={

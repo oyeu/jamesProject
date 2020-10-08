@@ -3,6 +3,7 @@ import styled from "styled-components"
 import RichText from "../components/RichText"
 import { graphql, navigate } from "gatsby"
 import Layout from "../components/Layout"
+import PageTitleSection from "../components/PageTitleSection"
 
 export const query = graphql`
   {
@@ -83,9 +84,9 @@ const DemoPage = (props: any) => {
   const pageContent = props.data.prismic.allDems.edges[0].node
   return (
     <Layout>
+      <PageTitleSection title={pageContent.title} />
       <DemoPageWrapper backgroundImage={pageContent.background_image.url}>
         <div className="content">
-          <RichText render={pageContent.title} />
           <RichText render={pageContent.content} />
 
           <div className="buttons-container">

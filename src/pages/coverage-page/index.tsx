@@ -5,6 +5,8 @@ import RichText from "../../components/RichText"
 import Layout from "../../components/Layout"
 import { Carousel } from "react-bootstrap"
 import PlanButton from "../../components/PlanButton"
+import PageTitleSection from "../../components/PageTitleSection"
+
 export const query = graphql`
   {
     prismic {
@@ -110,11 +112,11 @@ const CoveragePage = (props: any) => {
   const pageContent = props.data.prismic.allCoverage_pages.edges[0].node
   return (
     <Layout>
+      <PageTitleSection title={pageContent.title} />
       <CoveragePageWrapper backgroundImage={pageContent.background_image.url}>
         <div className="background">
           <div className="main">
             <div className="title-section">
-              <RichText render={pageContent.title} />
               <RichText render={pageContent.subtitle} />
             </div>
             <div className="content-section">

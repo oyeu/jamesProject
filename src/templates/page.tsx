@@ -5,6 +5,7 @@ import Layout from "../components/Layout"
 import styled from "styled-components"
 import PriceList from "../components/PlansPriceList"
 import PlanPageContent from "../components/PlansPageContent"
+import PageTitleSection from "../components/PageTitleSection"
 
 export const query = graphql`
   query PageQuery($id: String) {
@@ -62,8 +63,8 @@ const Page = (props: any) => {
   return (
     <Layout>
       <PageWrapper>
+        <PageTitleSection title={pageContent.page_title} />
         <PlanPageContent
-          title={pageContent.page_title}
           subtitle={pageContent.subtitle}
           content={pageContent.content}
           image1={pageContent.service_image_1.url}
