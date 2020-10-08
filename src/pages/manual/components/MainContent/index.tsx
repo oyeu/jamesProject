@@ -15,7 +15,7 @@ const AppsWrapper = styled.div`
   display: flex;
 `
 
-const MainContent = ({ mainText, iptvApps }: any) => {
+const MainContent = ({iptvApps, mainText}: any) => {
   console.log(iptvApps)
 
   return (
