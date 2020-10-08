@@ -16,8 +16,8 @@ const AppsWrapper = styled.div`
 `
 
 const MainContent = ({iptvApps, mainText}: any) => {
-  console.log(iptvApps)
-
+  console.log(iptvApps);
+  
   return (
     <MainContentWrapper>
       <RichText render={mainText} />
@@ -25,7 +25,7 @@ const MainContent = ({iptvApps, mainText}: any) => {
         {iptvApps.map((appItem: any, i: any) => {
           return (
             <AppCard
-              key={i}
+              key={appItem.app_link.url}
               link={appItem.app_link.url}
               logo={appItem.logo.url}
               name={appItem.name}

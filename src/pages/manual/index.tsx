@@ -43,6 +43,8 @@ const ManualPageWrapper = styled.div`
 
 const ManualPage = (props: any) => {
   let pageContent = props.data.prismic.allManual_pages.edges[0].node
+  console.log(pageContent);
+  
   return (
     <Layout>
       <PageTitleSection title={pageContent.page_title} />
