@@ -15,14 +15,14 @@ const AppsWrapper = styled.div`
   display: flex;
 `
 
-const MainContent = ({iptv_Apps, mainText}: any) => {
-  console.log(iptv_Apps)
+const MainContent = ({iptvApps, mainText}: any) => {
+  console.log(iptvApps)
 
   return (
     <MainContentWrapper>
       <RichText render={mainText} />
       <AppsWrapper>
-        {iptv_Apps.map((appItem: any, i: any) => {
+        {iptvApps.map((appItem: any, i: any) => {
           return (
             <AppCard
               key={i}

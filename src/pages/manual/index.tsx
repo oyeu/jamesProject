@@ -42,14 +42,14 @@ const ManualPageWrapper = styled.div`
 `
 
 const ManualPage = (props: any) => {
-  const pageContent = props.data.prismic.allManual_pages.edges[0].node
+  let pageContent = props.data.prismic.allManual_pages.edges[0].node
   return (
     <Layout>
       <PageTitleSection title={pageContent.page_title} />
       <ManualPageWrapper>
         <MainContent
           mainText={pageContent.content}
-          iptv_Apps={pageContent.iptvapps}
+          iptvApps={pageContent.iptvapps}
         />
         <QuestionList
           title={pageContent.questions_title}
