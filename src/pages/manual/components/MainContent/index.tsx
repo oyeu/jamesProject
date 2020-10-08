@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import RichText from "../../../../components/RichText"
 import AppCard from "./components/AppItem"
+import {RichTextProps as RichTextI} from 'prismic-reactjs'
 
 const MainContentWrapper = styled.section`
   max-width: 1200px;
@@ -14,8 +15,22 @@ const MainContentWrapper = styled.section`
 const AppsWrapper = styled.div`
   display: flex;
 `
+interface Props {
+  iptvApps:{
+    app_link:{
+      url:string
+    },
+    logo:{
+      url:string
+    }
+    name:RichTextI,
+    targetdevice:RichTextI
+  }[],
+  mainText:RichTextI
+}
 
-const MainContent = ({iptvApps, mainText}: any) => {
+const MainContent = ({iptvApps, mainText}: Props) => {
+  console.log('asdasd',!!iptvApps);
   
   return (
     <MainContentWrapper>
