@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-// import { PagePropsWithPrismic } from "../@types/prismic"
 import styled from "styled-components"
 import PriceList from "../components/PlansPriceList"
 import PlanPageContent from "../components/PlansPageContent"
@@ -58,7 +57,6 @@ const PageWrapper = styled.section`
 
 const Page = (props: any) => {
   // console.log(props)
-
   const pageContent = props.data.prismic.allPages.edges[0].node
   return (
     <Layout>

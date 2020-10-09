@@ -10,8 +10,8 @@ import { StaticQuery, graphql, Link } from "gatsby"
 import "./layout.css"
 import styled from "styled-components"
 import Headroom from "react-headroom"
-import DemoButton from "../DemoButton"
 import "bootstrap/dist/css/bootstrap.min.css"
+import DemoButton from "../DemoButton"
 
 const navigationQuery = graphql`
   {

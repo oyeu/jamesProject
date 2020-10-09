@@ -4,6 +4,7 @@ import RichText from "../components/RichText"
 import { graphql, navigate } from "gatsby"
 import Layout from "../components/Layout"
 import PageTitleSection from "../components/PageTitleSection"
+import PromotionSlice from "../components/PromotionSlice"
 
 export const query = graphql`
   {
@@ -38,7 +39,6 @@ export const query = graphql`
 const DemoPageWrapper = styled.section<any>`
   color: white;
   text-align: center;
-  height: 100vh;
   position: relative;
   background: #000f38;
   overflow: hidden;
@@ -60,11 +60,11 @@ const DemoPageWrapper = styled.section<any>`
   }
 
   .content {
+    padding: 100px;
     margin: auto;
     max-width: 1200px;
     position: relative;
     z-index: 2;
-    height: 100%;
 
     .buttons-container {
       display: flex;
@@ -120,6 +120,7 @@ const DemoPage = (props: any) => {
           </div>
         </div>
       </DemoPageWrapper>
+      <PromotionSlice />
     </Layout>
   )
 }

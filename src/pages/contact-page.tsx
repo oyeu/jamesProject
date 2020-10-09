@@ -4,6 +4,7 @@ import Layout from "../components/Layout"
 import styled from "styled-components"
 import RichText from "../components/RichText"
 import PageTitleSection from "../components/PageTitleSection"
+import PromotionSlice from "../components/PromotionSlice"
 
 export const query = graphql`
   {
@@ -62,7 +63,7 @@ const PageWrapper = styled.section`
   color: white;
   margin: 0 auto;
   max-width: 800px;
-  height: 100vh;
+  height: auto;
 
   .form-description {
   }
@@ -124,6 +125,7 @@ const ContactPage = (props: any) => {
           </Form>
         </FormWrapper>
       </PageWrapper>
+      <PromotionSlice />
     </Layout>
   )
 }

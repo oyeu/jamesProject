@@ -89,7 +89,7 @@ const PlansPageContent = ({
             <button
               className="whatsapp-button"
               onClick={() => {
-                navigate("https://wa.link/f0y2le")
+                navigate("https://wa.link/0j7qpr")
               }}
             >
               WhatsApp

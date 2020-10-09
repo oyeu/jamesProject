@@ -6,6 +6,7 @@ import Layout from "../../components/Layout"
 import { Carousel } from "react-bootstrap"
 import PlanButton from "../../components/PlanButton"
 import PageTitleSection from "../../components/PageTitleSection"
+import PromotionSlice from "../../components/PromotionSlice"
 
 export const query = graphql`
   {
@@ -38,10 +39,13 @@ export const query = graphql`
 
 const OurContentWrapper = styled.section<any>`
   color: white;
-  padding: 40px;
+  padding-bottom: 40px;
 
   .slider-section {
     text-align: center;
+    padding-top: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .plan-button-section {
@@ -124,6 +128,7 @@ const ContentPage = (props: any) => {
             </div>
           </div>
         </div>
+        <PromotionSlice />
         <div className="slider-section">
           <RichText render={pageContent.body[0].primary.slider_title} />
           <Carousel>
