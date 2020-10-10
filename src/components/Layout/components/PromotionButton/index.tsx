@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
-import { graphql, Link , StaticQuery} from "gatsby"
-import RichText from '../../../RichText'
+import { graphql, Link, StaticQuery } from "gatsby"
+import RichText from "../../../RichText"
 
 const query = graphql`
-{
+  {
     prismic {
       allPromotion_types {
         edges {
@@ -19,47 +19,70 @@ const query = graphql`
       }
     }
   }
-  
 `
 
 const PromotionButtonWrapper = styled.div`
-  width: 15%;
   position: fixed;
   bottom: 70vh;
   right: 0;
   z-index: 3;
   background: orange;
-  text-align:center;
-  font-weight:bold;
-  display:flex;
-  flex-direction:column;
-  
+  cursor: pointer;
+  text-align: center;
+  font-size: 20px;
+  width: 12rem;
+  height: 5rem;
+  font-weight: bold;
+  border: solid;
+  border-style: outset;
+  border-width: 5px;
 
-  a {
-    font-size:20px;
-    margin:auto;
+  :hover {
+    background: #000f38;
+    border-color: green;
+
+    a {
+      color: white;
+    }
   }
 
+  a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+
+    p {
+      margin: 0;
+    }
+  }
 `
 
 const PromotionButton = () => {
   return (
-      <StaticQuery 
-        query={query}
-        render={data=> {
-            data=data.prismic.allPromotion_types.edges[0].node
-            if (data.show_promotion) {
-                return(
-                    <PromotionButtonWrapper>
-                        <Link to={`/${data._meta.uid}`}>
-                            <RichText render={data.promotion_subtitle}/>
-                        </Link>  
-                    </PromotionButtonWrapper>
-                )
-            } else {
-                return (null)
-            }   
-        }}/>
-)}
+    <StaticQuery
+      query={query}
+      render={data => {
+        data = data.prismic.allPromotion_types.edges[0].node
+        if (data.show_promotion) {
+          return (
+            <PromotionButtonWrapper>
+              <Link to={`/${data._meta.uid}`}>
+                <RichText render={data.promotion_subtitle} />
+                ¡Enterate aquí!
+              </Link>
+            </PromotionButtonWrapper>
+          )
+        } else {
+          return null
+        }
+      }}
+    />
+  )
+}
 
 export default PromotionButton

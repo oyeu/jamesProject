@@ -75,6 +75,7 @@ const PageWrapper = styled.section`
     font-size: 20px;
     padding: 10px;
     border-radius: 10px;
+    align-items: center;
 
     button {
       background: #25d366;

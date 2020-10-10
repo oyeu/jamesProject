@@ -40,8 +40,8 @@ const PromotionPageWrapper = styled.section`
     margin: 0 auto;
 
     .promotion-subtitle {
-      font-size:30px;
-      font-weight:bold;
+      font-size: 30px;
+      font-weight: bold;
     }
 
     .plan-card {

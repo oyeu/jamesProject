@@ -13,6 +13,7 @@ import Headroom from "react-headroom"
 import "bootstrap/dist/css/bootstrap.min.css"
 import DemoButton from "../DemoButton"
 import PromotionButton from "./components/PromotionButton"
+import HouseButton from "./components/HouseButton"
 
 const navigationQuery = graphql`
   {
@@ -161,6 +162,7 @@ const Layout = ({ children }: Props) => {
           return (
             <>
               <PromotionButton />
+              <HouseButton />
               <Headroom style={{ zIndex: 3 }}>
                 <Header>
                   <LogoHeader>
