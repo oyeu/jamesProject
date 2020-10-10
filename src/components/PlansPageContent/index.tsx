@@ -64,7 +64,6 @@ const ButtonsGrid = styled.div`
 `
 
 const PlansPageContent = ({
-  title,
   subtitle,
   content,
   image1,
@@ -74,9 +73,6 @@ const PlansPageContent = ({
 }: any) => {
   return (
     <PageContentWrapper backgroundImage={backgroundImage}>
-      <div className="page_title">
-        <RichText render={title} />
-      </div>
       <div className="content">
         <div className="left-side-content">
           <div className="page_subtitle">

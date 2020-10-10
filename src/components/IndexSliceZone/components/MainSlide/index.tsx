@@ -2,7 +2,6 @@ import React from "react"
 import RichText from "../../../RichText"
 import styled from "styled-components"
 import DemoButton from "../../../DemoButton"
-import PromotionSlice from "../../../PromotionSlice"
 
 interface Props {
   backgroundImage: any
@@ -49,7 +48,6 @@ const mainSlide = ({ title, content, backgroundImage }: any) => {
           </div>
         </div>
       </SliceWrapper>
-      <PromotionSlice />
     </>
   )
 }

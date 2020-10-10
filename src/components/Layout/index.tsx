@@ -12,6 +12,7 @@ import styled from "styled-components"
 import Headroom from "react-headroom"
 import "bootstrap/dist/css/bootstrap.min.css"
 import DemoButton from "../DemoButton"
+import PromotionButton from "./components/PromotionButton"
 
 const navigationQuery = graphql`
   {
@@ -57,6 +58,7 @@ const navigationQuery = graphql`
 const Main = styled.main`
   margin: 0 auto;
   background: #000f38;
+  height: 100%;
 `
 
 const NavLink = styled.div`
@@ -83,9 +85,8 @@ const NavLink = styled.div`
 const Header = styled.header`
   display: flex;
   background: #000f38;
-  height: auto;
-  padding: 0 16px;
-  box-sizing: border-box;
+  height: 100%;
+  padding-right: 20px;
 `
 const NavLinks = styled.div`
   margin-left: auto;
@@ -122,6 +123,15 @@ const Branding = styled.div`
   
 `
 
+const LogoHeader = styled.div`
+  display: flex;
+
+  img {
+    border: 1px solid #ddd;
+    height: auto;
+    margin: 0;
+  }
+`
 /*Neon rojo
   text-shadow: 0 0 5px rgba(248, 5, 47, 1), 0 0 10px rgba(248, 5, 47, 1),
       0 0 20px rgba(248, 5, 47, 1), 0 0 40px rgba(136, 14, 59, 1),
@@ -140,31 +150,19 @@ interface Props {
   children: JSX.Element[] | JSX.Element
 }
 
-const LogoHeader = styled.div`
-  display: flex;
-
-  img {
-    border: 1px solid #ddd;
-    display: block;
-    max-width: 200px;
-    margin: 20px;
-    height: auto;
-    border-radius: 20px;
-  }
-`
-
 const Layout = ({ children }: Props) => {
   return (
     <>
-      <Headroom>
-        <Header>
-          <StaticQuery
-            query={navigationQuery}
-            render={data => {
-              const headerContent = data.prismic.allNavigations.edges[0].node
-              // console.log(data)
-              return (
-                <>
+      <StaticQuery
+        query={navigationQuery}
+        render={data => {
+          const headerContent = data.prismic.allNavigations.edges[0].node
+          // console.log(data)
+          return (
+            <>
+              <PromotionButton />
+              <Headroom style={{ zIndex: 3 }}>
+                <Header>
                   <LogoHeader>
                     <img src={headerContent.logo.url} alt="logo header" />
                   </LogoHeader>
@@ -194,12 +192,12 @@ const Layout = ({ children }: Props) => {
                       }
                     })}
                   </NavLinks>
-                </>
-              )
-            }}
-          />
-        </Header>
-      </Headroom>
+                </Header>
+              </Headroom>
+            </>
+          )
+        }}
+      />
       <Main>{children}</Main>
     </>
   )

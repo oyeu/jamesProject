@@ -10,10 +10,9 @@ const HeaderDemoButtonWrapper = styled.section`
   button {
     margin: auto;
     background-color: #25d366;
-    border-radius: 10px;
     color: white;
     width: auto;
-    height: 30%;
+    height: 50%;
   }
 `
 
@@ -26,7 +25,6 @@ const MainSlideDemoButtonWrapper = styled.section`
     margin: auto;
     padding: 10px;
     background-color: #25d366;
-    border-radius: 10px;
     color: white;
     width: auto;
     height: 100%;

@@ -3,6 +3,7 @@ import styled from "styled-components"
 import RichText from "../../../../components/RichText"
 import AppCard from "./components/AppItem"
 import { RichTextProps as RichTextI } from "prismic-reactjs"
+import ContactButton from "../../../../components/ContactButton"
 
 const MainContentWrapper = styled.section`
   max-width: 1200px;
@@ -46,6 +47,7 @@ const MainContent = ({ iptvApps, mainText }: Props) => {
           )
         })}
       </AppsWrapper>
+      <ContactButton />
     </MainContentWrapper>
   )
 }

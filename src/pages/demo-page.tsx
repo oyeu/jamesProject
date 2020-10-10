@@ -4,7 +4,6 @@ import RichText from "../components/RichText"
 import { graphql, navigate } from "gatsby"
 import Layout from "../components/Layout"
 import PageTitleSection from "../components/PageTitleSection"
-import PromotionSlice from "../components/PromotionSlice"
 
 export const query = graphql`
   {
@@ -120,7 +119,6 @@ const DemoPage = (props: any) => {
           </div>
         </div>
       </DemoPageWrapper>
-      <PromotionSlice />
     </Layout>
   )
 }

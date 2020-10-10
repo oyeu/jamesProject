@@ -7,6 +7,7 @@ const ItemWrapper = styled.div`
   margin: 0 auto;
   width: 20%;
   background: #eee;
+  border-radius: 10px;
 
   .img-holder {
     display: flex;
@@ -32,7 +33,20 @@ const ItemWrapper = styled.div`
     }
   }
 `
-const Button = styled.div``
+const Button = styled.div`
+  width: 80%;
+  border: solid;
+  margin: 0 auto;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+
+  a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+`
 
 const AppCard = ({ link, logo, name, targetDevice }: any) => {
   return (

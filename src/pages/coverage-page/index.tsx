@@ -6,7 +6,6 @@ import Layout from "../../components/Layout"
 import { Carousel } from "react-bootstrap"
 import PlanButton from "../../components/PlanButton"
 import PageTitleSection from "../../components/PageTitleSection"
-import PromotionSlice from "../../components/PromotionSlice"
 
 export const query = graphql`
   {
@@ -133,7 +132,6 @@ const CoveragePage = (props: any) => {
             </div>
           </div>
         </div>
-        <PromotionSlice />
         <div className="slider-section">
           <RichText render={pageContent.body[0].primary.slider_title} />
           <Carousel>
