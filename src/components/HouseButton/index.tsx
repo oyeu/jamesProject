@@ -21,7 +21,7 @@ const query = graphql`
 
 const HouseButtonWrapper = styled.div`
   position: fixed;
-  top: 23vh;
+  top: 32vh;
   left: 0;
   z-index: 3;
   text-align: center;
