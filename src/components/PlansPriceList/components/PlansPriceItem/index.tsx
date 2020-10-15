@@ -26,6 +26,9 @@ const PriceItem = ({ price, title, pricexxx }: any) => {
       <div>
         ${price} / ${pricexxx} con canales XXX
       </div>
+      <div className=''>
+
+      </div>
       <form
         action="https://www.paypal.com/cgi-bin/webscr"
         method="post"

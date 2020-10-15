@@ -89,6 +89,9 @@ const Header = styled.header`
   position:sticky;
   top:0;
   z-index:3;
+  border-bottom:solid;
+  border-style:inline;
+  border-color: #dcda15;
 `
 const NavLinks = styled.div`
   margin-left: auto;

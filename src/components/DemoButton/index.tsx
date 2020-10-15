@@ -9,10 +9,21 @@ const HeaderDemoButtonWrapper = styled.section`
 
   button {
     margin: auto;
-    background-color: #25d366;
-    color: white;
+    background-color: #dcda15;
+    color:black;
     width: auto;
     height: 50%;
+    font-weight:bold;
+    border: solid;
+    border-style: outset;
+    border-width: 5px;
+    border-color: #ca0603;
+
+    :hover {
+      background: #ca0603;
+      border-color: #dcda15;
+      color:white;
+    }
   }
 `
 
@@ -24,10 +35,21 @@ const MainSlideDemoButtonWrapper = styled.section`
   button {
     margin: auto;
     padding: 10px;
-    background-color: #25d366;
-    color: white;
+    background-color: #dcda15;
+    color: black;
     width: auto;
     height: 100%;
+    font-weight:bold;
+    border: solid;
+    border-style: outset;
+    border-width: 5px;
+    border-color: #ca0603;
+
+    :hover {
+      background: #ca0603;
+      border-color: #dcda15;
+      color:white;
+  }
   }
 `
 

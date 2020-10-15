@@ -21,7 +21,7 @@ const query = graphql`
 
 const HouseButtonWrapper = styled.div`
   position: fixed;
-  top: 30vh;
+  top: 23vh;
   left: 0;
   z-index: 3;
   text-align: center;
@@ -30,14 +30,17 @@ const HouseButtonWrapper = styled.div`
   border: solid;
   border-style: outset;
   border-width: 5px;
-  max-width:290px;
+  border-color: #ca0603;
 
+  :hover {
+    border-color: #dcda15;
+}
 
   a {
     text-decoration:none;
 
     .text {
-      color:black;
+      color:#ca0603;
       background:#eee;
     }
 

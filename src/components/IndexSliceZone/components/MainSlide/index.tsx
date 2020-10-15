@@ -19,7 +19,7 @@ const SliceWrapper = styled.section<Props>`
 
   .content-wrapper {
     display: flex;
-    max-width: 1000px;
+    max-width: 800px;
     margin: 0 auto;
 
     .slide-content {

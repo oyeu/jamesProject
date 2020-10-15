@@ -76,17 +76,29 @@ const PageWrapper = styled.section<any>`
         display: flex;
         align-items: center;
         justify-content: center;
+        
 
         .btn-wrapper {
           width: 20rem;
           height: 5rem;
           display: flex;
-          background: #25d366;
-
+          background: #dcda15;
           cursor: pointer;
           border: solid;
           border-style: outset;
           border-width: 5px;
+          border-color: #ca0603;
+          color:black;
+          
+          :hover {
+            background: #ca0603;
+            border-color: #dcda15;
+            color:white;
+
+            a{
+              color:white;
+            }
+          }
 
           a {
             text-decoration: none;
@@ -98,9 +110,6 @@ const PageWrapper = styled.section<any>`
             color: black;
             font-weight: bold;
 
-            span {
-              margin: 0;
-            }
           }
         }
       }
@@ -243,7 +252,7 @@ const CasaAutonomaPage = (props: any) => {
             <div className="contact-button">
               <div className="btn-wrapper">
                 <Link to={"/contact-page"}>
-                  <span>¡Empezemos!</span>
+                  ¡Empezemos!
                 </Link>
               </div>
             </div>

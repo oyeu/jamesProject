@@ -23,10 +23,10 @@ const query = graphql`
 
 const PromotionButtonWrapper = styled.div`
   position: fixed;
-  top: 30vh;
+  top: 32vh;
   right: 0;
   z-index: 3;
-  background: orange;
+  background: #ca0603;
   cursor: pointer;
   text-align: center;
   font-size: 20px;
@@ -36,19 +36,20 @@ const PromotionButtonWrapper = styled.div`
   border: solid;
   border-style: outset;
   border-width: 5px;
+  border-color: #dcda15;
 
   :hover {
-    background: #000f38;
-    border-color: green;
+    background: #dcda15;
+    border-color: #ca0603;
 
     a {
-      color: white;
+      color: black;
     }
   }
 
   a {
     text-decoration: none;
-    color: black;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;

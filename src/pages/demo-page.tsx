@@ -69,11 +69,22 @@ const DemoPageWrapper = styled.section<any>`
       display: flex;
 
       button {
-        color: white;
-        background-color: #25d366;
+        color: black;
+        background-color: #dcda15;
         margin: 0 auto;
         width: 40%;
         height: 100px;
+        border: solid;
+        border-style: outset;
+        border-width: 5px;
+        border-color: #ca0603;
+        font-weight:bold;
+
+        :hover {
+          background: #ca0603;
+          border-color: #dcda15;
+          color:white;
+        }
       }
     }
   }

@@ -55,12 +55,20 @@ const ButtonsGrid = styled.div`
   button {
     margin: auto;
     width: 40%;
+    background:#dcda15;
     border-radius: 15px;
+    border: solid;
+    border-style: outset;
+    border-width: 5px;
+    border-color: #ca0603;
+
+    :hover {
+      background: #ca0603;
+      border-color: #dcda15;
+      color: white;
+    }
   }
 
-  .whatsapp-button {
-    background-color: #25d366;
-  }
 `
 
 const PlansPageContent = ({
@@ -83,7 +91,6 @@ const PlansPageContent = ({
           </div>
           <ButtonsGrid>
             <button
-              className="whatsapp-button"
               onClick={() => {
                 navigate("https://wa.link/0j7qpr")
               }}
@@ -91,7 +98,6 @@ const PlansPageContent = ({
               WhatsApp
             </button>
             <button
-              className="contact-page-button"
               onClick={() => {
                 navigate("/contact-page")
               }}

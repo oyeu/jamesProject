@@ -29,15 +29,17 @@ const CallToActionBlockWrapper = styled.section`
 
 const Button = styled.div`
   text-align: center;
-  background: #000f38;
+  background: #dcda15;
   display: inline-block;
   border-radius: 4px;
-  color: white;
   cursor: pointer;
   width: 100%;
+  border:solid;
+  border-style:outset;
+  border-color: #ca0603;
 
   a {
-    color: white;
+    color: black;
     text-decoration: none;
     padding: 4px 8px;
     display: inline-block;
