@@ -19,44 +19,32 @@ const query = graphql`
   }
 `
 
-const HouseButtonWrapper = styled.div<any>`
-  max-width: 200px;
+const HouseButtonWrapper = styled.div`
   position: fixed;
-  bottom: 60vh;
+  top: 30vh;
   left: 0;
   z-index: 3;
-  cursor: pointer;
   text-align: center;
   font-size: 20px;
-  width: 9rem;
-  height: 96px;
   font-weight: bold;
   border: solid;
   border-style: outset;
   border-width: 5px;
-  background-image: url("${(props: any) => props.backgroundImage}");
-  background-size: contain;
-  background-repeat: no-repeat;
+  max-width:290px;
 
-  .text {
-    background: white;
-    border: solid;
-    border-color: #eee;
-  }
 
   a {
-    text-decoration: none;
-    color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
+    text-decoration:none;
 
-    p {
-      margin: 0;
+    .text {
+      color:black;
+      background:#eee;
     }
+
+    img {
+      margin:0;
+    }
+
   }
 `
 
@@ -67,9 +55,11 @@ const HouseButton = () => {
       render={data => {
         data = data.prismic.allCasa_autonomas.edges[0].node
         return (
-          <HouseButtonWrapper backgroundImage={data.button_image.url}>
-            <Link to={`/${data._meta.uid}`} />
-            <div className="text">EL HOGAR EN SUS MANOS</div>
+          <HouseButtonWrapper>
+            <Link to={`/${data._meta.uid}`} >
+              <img src={data.button_image.url} alt=""/>
+              <div className="text">EL HOGAR EN SUS MANOS</div>
+            </Link>
           </HouseButtonWrapper>
         )
       }}

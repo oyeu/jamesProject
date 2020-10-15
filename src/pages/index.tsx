@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/Layout"
 import SliceZone from "../components/IndexSliceZone"
+import HouseButton from "../components/HouseButton"
 
 export const query = graphql`
   {
@@ -74,6 +75,7 @@ const IndexPage = (props: any) => {
 
   return (
     <Layout>
+      <HouseButton />
       <SliceZone body={props.data.prismic.allHomepages.edges[0].node.body} />
     </Layout>
   )

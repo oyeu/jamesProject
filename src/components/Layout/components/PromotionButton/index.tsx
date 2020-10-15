@@ -23,7 +23,7 @@ const query = graphql`
 
 const PromotionButtonWrapper = styled.div`
   position: fixed;
-  bottom: 70vh;
+  top: 30vh;
   right: 0;
   z-index: 3;
   background: orange;

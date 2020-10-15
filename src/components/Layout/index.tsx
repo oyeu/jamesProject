@@ -9,11 +9,9 @@ import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 import "./layout.css"
 import styled from "styled-components"
-import Headroom from "react-headroom"
 import "bootstrap/dist/css/bootstrap.min.css"
 import DemoButton from "../DemoButton"
 import PromotionButton from "./components/PromotionButton"
-import HouseButton from "./components/HouseButton"
 
 const navigationQuery = graphql`
   {
@@ -88,6 +86,9 @@ const Header = styled.header`
   background: #000f38;
   height: 100%;
   padding-right: 20px;
+  position:sticky;
+  top:0;
+  z-index:3;
 `
 const NavLinks = styled.div`
   margin-left: auto;
@@ -128,6 +129,7 @@ const LogoHeader = styled.div`
   display: flex;
 
   img {
+    width:35%;
     border: 1px solid #ddd;
     height: auto;
     margin: 0;
@@ -162,8 +164,6 @@ const Layout = ({ children }: Props) => {
           return (
             <>
               <PromotionButton />
-              <HouseButton />
-              <Headroom style={{ zIndex: 3 }}>
                 <Header>
                   <LogoHeader>
                     <img src={headerContent.logo.url} alt="logo header" />
@@ -195,7 +195,6 @@ const Layout = ({ children }: Props) => {
                     })}
                   </NavLinks>
                 </Header>
-              </Headroom>
             </>
           )
         }}
