@@ -1,33 +1,56 @@
 import React from "react"
+import Dropdown from "react-bootstrap/esm/Dropdown"
 import styled from "styled-components"
 import RichText from "../../../RichText"
 
 const PriceItemWrapper = styled.div`
-  flex-grow: 1;
-  flex-basis: 0;
   margin: 0 10px;
   background: #eee;
   padding: 10px;
-  color: black;
+  color: #000f38;
   position: relative;
   border-radius: 10px;
-`
+  border:solid;
+  border-color:#ca0603;
 
-const Button = styled.button`
-  margin: 10px auto;
-  background: #000f38;
-  color: white;
+  :hover {
+    border-color:#dcda15;
+  }
+
+  .list {
+    .plan-options {
+      padding: 10px 0px;
+      
+      .list-header {
+        background:#000f38;
+      }
+    }
+  }
 `
 
 const PriceItem = ({ price, title, pricexxx }: any) => {
+
+  function handleChange(e:any) {
+    console.log(e);
+    
+  }
+
   return (
     <PriceItemWrapper>
       <RichText render={title} />
       <div>
         ${price} / ${pricexxx} con canales XXX
       </div>
-      <div className=''>
-
+      <div className='list'>
+      <Dropdown className='plan-options'>
+        <Dropdown.Toggle variant="success" id="dropdown-basic" className='list-header'>
+          Escoge el tipo
+        </Dropdown.Toggle>
+        <Dropdown.Menu>
+          <Dropdown.Item >Normal</Dropdown.Item>
+          <Dropdown.Item >Con canales XXX</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
       </div>
       <form
         action="https://www.paypal.com/cgi-bin/webscr"
