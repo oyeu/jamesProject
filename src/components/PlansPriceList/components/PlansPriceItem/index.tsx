@@ -56,7 +56,6 @@ const PriceItem = ({ price, title, pricexxx }: any) => {
   return (
     <PriceItemWrapper>
       <RichText render={title} />
-      <div className="list">{renderTypeSelector()}</div>
       <div className='buttons-container'>
         <div>
           <p>{price}$ sin XXX</p>
