@@ -31,13 +31,23 @@ const PriceItemWrapper = styled.div`
   .buttons-container {
     display:flex;
     margin: 0 auto;
+    padding-top:10px;
 
     div {
-  
+      border:solid;
+      border-width:1px;
+      border-style:inset;
+
+
+      form {
+        margin:0;
+        height:56px;
+      }
     }
 
     p {
       align-text:center;
+      font-weight:bold;
     }
   }
 `
@@ -46,13 +56,10 @@ const PriceItem = ({ price, title, pricexxx }: any) => {
   return (
     <PriceItemWrapper>
       <RichText render={title} />
-      <div>
-        ${price} / ${pricexxx} con canales XXX
-      </div>
       <div className="list">{renderTypeSelector()}</div>
       <div className='buttons-container'>
         <div>
-          <p>Sin XXX</p>
+          <p>{price}$ sin XXX</p>
           <form
             action="https://www.paypal.com/cgi-bin/webscr"
             method="post"
@@ -75,7 +82,7 @@ const PriceItem = ({ price, title, pricexxx }: any) => {
           </form>
         </div>
         <div>
-          <p>Con XXX</p>
+          <p>{pricexxx}$ con XXX</p>
           <form
             action="https://www.paypal.com/cgi-bin/webscr"
             method="post"
