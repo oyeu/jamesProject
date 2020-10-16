@@ -2,32 +2,37 @@ import React from "react"
 import RichText from "../../../RichText"
 import styled from "styled-components"
 import DemoButton from "../../../DemoButton"
+import { Carousel } from "react-bootstrap"
 
-interface Props {
-  backgroundImage: any
-}
-
-const SliceWrapper = styled.section<Props>`
-  background: url("${(props: any) => props.backgroundImage}");
-  background-size: cover;
-  background-repeat: no-repeat;
+const SliceWrapper = styled.section`
   height: calc(140vh - 50vh);
-  display: flex;
   align-items: center;
   text-align: center;
   color: white;
 
+  div {
+    height:inherit;
+  }
+
+`
+
+const SlideWrapper = styled.div<any>`
+  background-image: url("${(props: any) => props.backgroundImage}");
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  display:flex;
+
   .content-wrapper {
-    display: flex;
     max-width: 800px;
-    margin: 0 auto;
+    margin: auto;
+    height:auto;
+    background: rgba(0, 0, 0, 0.5);
 
     .slide-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
       margin: 0 auto;
-      background: rgba(0, 0, 0, 0.5);
+      
+      padding: 10px;
 
       h1 {
         margin: 0px;
@@ -36,17 +41,28 @@ const SliceWrapper = styled.section<Props>`
   }
 `
 
-const mainSlide = ({ title, content, backgroundImage }: any) => {
+const mainSlide = ({ title, content, backgroundImages }: any) => {
   return (
     <>
-      <SliceWrapper backgroundImage={backgroundImage}>
-        <div className="content-wrapper">
-          <div className="slide-content">
-            <RichText render={title} />
-            {content}
-            <DemoButton type={"main-slide"} />
-          </div>
-        </div>
+      <SliceWrapper>
+        <Carousel>
+          {backgroundImages.map((img: any, i:any) => {
+              return (
+                <Carousel.Item key={i}>
+                  <SlideWrapper backgroundImage={img.main_slide_image.url} >
+                    <div className="content-wrapper">
+                    <div className="slide-content">
+                      <RichText render={title} />
+                      {content}
+                      <DemoButton type={"main-slide"} />
+                    </div>
+
+                    </div>
+                  </SlideWrapper>
+                </Carousel.Item>
+              )
+            })}
+        </Carousel>
       </SliceWrapper>
     </>
   )

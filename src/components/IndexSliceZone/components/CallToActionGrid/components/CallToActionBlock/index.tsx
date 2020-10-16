@@ -34,8 +34,8 @@ const Button = styled.div`
   border-radius: 4px;
   cursor: pointer;
   width: 100%;
-  border:solid;
-  border-style:outset;
+  border: solid;
+  border-style: outset;
   border-color: #ca0603;
 
   a {

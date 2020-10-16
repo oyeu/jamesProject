@@ -34,20 +34,19 @@ const HouseButtonWrapper = styled.div`
 
   :hover {
     border-color: #dcda15;
-}
+  }
 
   a {
-    text-decoration:none;
+    text-decoration: none;
 
     .text {
-      color:#ca0603;
-      background:#eee;
+      color: #ca0603;
+      background: #eee;
     }
 
     img {
-      margin:0;
+      margin: 0;
     }
-
   }
 `
 
@@ -59,8 +58,8 @@ const HouseButton = () => {
         data = data.prismic.allCasa_autonomas.edges[0].node
         return (
           <HouseButtonWrapper>
-            <Link to={`/${data._meta.uid}`} >
-              <img src={data.button_image.url} alt=""/>
+            <Link to={`/${data._meta.uid}`}>
+              <img src={data.button_image.url} alt="" />
               <div className="text">EL HOGAR EN SUS MANOS</div>
             </Link>
           </HouseButtonWrapper>

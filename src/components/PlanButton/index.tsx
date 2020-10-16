@@ -10,11 +10,10 @@ const ButtonWrapper = styled.div`
   border-radius: 10px;
   cursor: pointer;
   margin: 0 auto;
-  border:solid;
-  border-style:outset;
-  border-color:#ca0603;
-  border-width:5px;
-
+  border: solid;
+  border-style: outset;
+  border-color: #ca0603;
+  border-width: 5px;
 
   a {
     font-size: 50px;

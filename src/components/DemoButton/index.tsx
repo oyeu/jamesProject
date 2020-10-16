@@ -10,10 +10,10 @@ const HeaderDemoButtonWrapper = styled.section`
   button {
     margin: auto;
     background-color: #dcda15;
-    color:black;
+    color: black;
     width: auto;
     height: 50%;
-    font-weight:bold;
+    font-weight: bold;
     border: solid;
     border-style: outset;
     border-width: 5px;
@@ -22,7 +22,7 @@ const HeaderDemoButtonWrapper = styled.section`
     :hover {
       background: #ca0603;
       border-color: #dcda15;
-      color:white;
+      color: white;
     }
   }
 `
@@ -39,7 +39,7 @@ const MainSlideDemoButtonWrapper = styled.section`
     color: black;
     width: auto;
     height: 100%;
-    font-weight:bold;
+    font-weight: bold;
     border: solid;
     border-style: outset;
     border-width: 5px;
@@ -48,8 +48,8 @@ const MainSlideDemoButtonWrapper = styled.section`
     :hover {
       background: #ca0603;
       border-color: #dcda15;
-      color:white;
-  }
+      color: white;
+    }
   }
 `
 

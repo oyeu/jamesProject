@@ -8,8 +8,8 @@ const ItemWrapper = styled.div`
   width: 20%;
   background: #eee;
   border-radius: 10px;
-  border:solid;
-  border-style:inset;
+  border: solid;
+  border-style: inset;
   border-color: #dcda15;
 
   :hover {
@@ -47,11 +47,11 @@ const Button = styled.div`
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
-  border-color:#ca0603;
+  border-color: #ca0603;
 
   a {
-    color:#000f38;
-    text-decoration:none;
+    color: #000f38;
+    text-decoration: none;
     display: inline-block;
     width: 100%;
     height: 100%;

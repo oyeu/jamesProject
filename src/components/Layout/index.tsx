@@ -86,11 +86,11 @@ const Header = styled.header`
   background: #000f38;
   height: 100%;
   padding-right: 20px;
-  position:sticky;
-  top:0;
-  z-index:3;
-  border-bottom:solid;
-  border-style:inline;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  border-bottom: solid;
+  border-style: inline;
   border-color: #dcda15;
 `
 const NavLinks = styled.div`
@@ -132,7 +132,7 @@ const LogoHeader = styled.div`
   display: flex;
 
   img {
-    width:35%;
+    width: 35%;
     border: 1px solid #ddd;
     height: auto;
     margin: 0;
@@ -167,37 +167,37 @@ const Layout = ({ children }: Props) => {
           return (
             <>
               <PromotionButton />
-                <Header>
-                  <LogoHeader>
-                    <img src={headerContent.logo.url} alt="logo header" />
-                  </LogoHeader>
-                  <Branding>
-                    <div className="branding">
-                      <Link to="/">{headerContent.branding}</Link>
-                    </div>
-                    <div className="subranding">{headerContent.subranding}</div>
-                  </Branding>
-                  <NavLinks>
-                    <DemoButton type="header" />
-                    {headerContent.navigation_links.map((link: Links) => {
-                      if (link.link._meta.uid === "inicio") {
-                        return (
-                          <NavLink key={link.link._meta.uid}>
-                            <Link to={`/`}>{link.label}</Link>
-                          </NavLink>
-                        )
-                      } else {
-                        return (
-                          <NavLink key={link.link._meta.uid}>
-                            <Link to={`/${link.link._meta.uid}`}>
-                              {link.label}
-                            </Link>
-                          </NavLink>
-                        )
-                      }
-                    })}
-                  </NavLinks>
-                </Header>
+              <Header>
+                <LogoHeader>
+                  <img src={headerContent.logo.url} alt="logo header" />
+                </LogoHeader>
+                <Branding>
+                  <div className="branding">
+                    <Link to="/">{headerContent.branding}</Link>
+                  </div>
+                  <div className="subranding">{headerContent.subranding}</div>
+                </Branding>
+                <NavLinks>
+                  <DemoButton type="header" />
+                  {headerContent.navigation_links.map((link: Links) => {
+                    if (link.link._meta.uid === "inicio") {
+                      return (
+                        <NavLink key={link.link._meta.uid}>
+                          <Link to={`/`}>{link.label}</Link>
+                        </NavLink>
+                      )
+                    } else {
+                      return (
+                        <NavLink key={link.link._meta.uid}>
+                          <Link to={`/${link.link._meta.uid}`}>
+                            {link.label}
+                          </Link>
+                        </NavLink>
+                      )
+                    }
+                  })}
+                </NavLinks>
+              </Header>
             </>
           )
         }}

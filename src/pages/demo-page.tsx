@@ -78,12 +78,12 @@ const DemoPageWrapper = styled.section<any>`
         border-style: outset;
         border-width: 5px;
         border-color: #ca0603;
-        font-weight:bold;
+        font-weight: bold;
 
         :hover {
           background: #ca0603;
           border-color: #dcda15;
-          color:white;
+          color: white;
         }
       }
     }

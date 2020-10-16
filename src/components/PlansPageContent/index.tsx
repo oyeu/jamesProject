@@ -55,7 +55,7 @@ const ButtonsGrid = styled.div`
   button {
     margin: auto;
     width: 40%;
-    background:#dcda15;
+    background: #dcda15;
     border-radius: 15px;
     border: solid;
     border-style: outset;
@@ -68,7 +68,6 @@ const ButtonsGrid = styled.div`
       color: white;
     }
   }
-
 `
 
 const PlansPageContent = ({

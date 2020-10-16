@@ -14,11 +14,12 @@ export const query = graphql`
             body {
               ... on PRISMIC_HomepageBodyMainslice {
                 type
-                primary {
-                  home_main_slice_content
-                  home_main_slice_title
+                fields {
                   main_slide_image
-                  logo
+                }
+                primary {
+                  home_main_slice_title
+                  home_main_slice_content
                 }
               }
               ... on PRISMIC_HomepageBodyCall_to_action_grid {
