@@ -11,6 +11,7 @@ const PageTitleWrapper = styled.section`
   border-color: #dcda15;
   border-style: groove;
   display: flex;
+  margin-bottom: 20px;
 
   .title {
     margin: 0 auto;

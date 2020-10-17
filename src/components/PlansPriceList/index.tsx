@@ -25,6 +25,8 @@ const PriceList = ({ title, priceItems }: any) => {
               price={priceItem.price}
               title={priceItem.pricelist_title}
               pricexxx={priceItem.pricexxx}
+              xxxBtnCode={priceItem.xxx_button_code}
+              normalBtnCode={priceItem.normal_button_code}
             />
           )
         })}

@@ -1,5 +1,4 @@
-import React, { Fragment, Component } from "react"
-import Dropdown from "react-bootstrap/esm/Dropdown"
+import React from "react"
 import styled from "styled-components"
 import RichText from "../../../RichText"
 import "./index.css"
@@ -13,6 +12,10 @@ const PriceItemWrapper = styled.div`
   border-radius: 10px;
   border: solid;
   border-color: #ca0603;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 
   :hover {
     border-color: #dcda15;
@@ -29,34 +32,39 @@ const PriceItemWrapper = styled.div`
   }
 
   .buttons-container {
-    display:flex;
+    display: flex;
     margin: 0 auto;
-    padding-top:10px;
+    padding-top: 10px;
 
     div {
-      border:solid;
-      border-width:1px;
-      border-style:inset;
-
+      border: solid;
+      border-width: 1px;
+      border-style: groove;
 
       form {
-        margin:0;
-        height:56px;
+        margin: 0;
+        height: 56px;
       }
     }
 
     p {
-      align-text:center;
-      font-weight:bold;
+      align-text: center;
+      font-weight: bold;
     }
   }
 `
 
-const PriceItem = ({ price, title, pricexxx }: any) => {
+const PriceItem = ({
+  price,
+  title,
+  pricexxx,
+  normalBtnCode,
+  xxxBtnCode,
+}: any) => {
   return (
     <PriceItemWrapper>
       <RichText render={title} />
-      <div className='buttons-container'>
+      <div className="buttons-container">
         <div>
           <p>{price}$ sin XXX</p>
           <form
@@ -65,7 +73,11 @@ const PriceItem = ({ price, title, pricexxx }: any) => {
             target="_top"
           >
             <input type="hidden" name="cmd" value="_s-xclick" />
-            <input type="hidden" name="hosted_button_id" value="2FL8YUDK5RTT8" />
+            <input
+              type="hidden"
+              name="hosted_button_id"
+              value={normalBtnCode}
+            />
             <input
               type="image"
               src="https://www.paypalobjects.com/es_XC/i/btn/btn_buynowCC_LG.gif"
@@ -88,7 +100,7 @@ const PriceItem = ({ price, title, pricexxx }: any) => {
             target="_top"
           >
             <input type="hidden" name="cmd" value="_s-xclick" />
-            <input type="hidden" name="hosted_button_id" value="2FL8YUDK5RTT8" />
+            <input type="hidden" name="hosted_button_id" value={xxxBtnCode} />
             <input
               type="image"
               src="https://www.paypalobjects.com/es_XC/i/btn/btn_buynowCC_LG.gif"
@@ -104,12 +116,11 @@ const PriceItem = ({ price, title, pricexxx }: any) => {
           </form>
         </div>
       </div>
-      
     </PriceItemWrapper>
   )
 }
 
-const renderTypeSelector = () => {
+/*const renderTypeSelector = () => {
   return (
     <div className="type-list">
       <label>Escoge el tipo</label>
@@ -123,5 +134,5 @@ const renderTypeSelector = () => {
       </select>
     </div>
   )
-}
+}*/
 export default PriceItem

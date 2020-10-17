@@ -43,8 +43,27 @@ const OurContentWrapper = styled.section<any>`
   .slider-section {
     text-align: center;
     padding-top: 40px;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
+
+    .carousel-control-next {
+      justify-content: flex-end;
+    }
+
+    .carousel-control-prev {
+      justify-content: flex-start;
+    }
+
+    .carousel-control-next-icon {
+      background-color: #000f38;
+      width: 30%;
+      height: 15%;
+    }
+    .carousel-control-prev-icon {
+      background-color: #000f38;
+      width: 30%;
+      height: 15%;
+    }
   }
 
   .plan-button-section {
@@ -129,7 +148,7 @@ const ContentPage = (props: any) => {
         </div>
         <div className="slider-section">
           <RichText render={pageContent.body[0].primary.slider_title} />
-          <Carousel>
+          <Carousel pause={false}>
             {pageContent.body[0].fields.map((slide: any, i: any) => {
               return (
                 <Carousel.Item key={i}>

@@ -33,6 +33,8 @@ export const query = graphql`
                   price
                   pricexxx
                   pricelist_title
+                  normal_button_code
+                  xxx_button_code
                 }
               }
             }

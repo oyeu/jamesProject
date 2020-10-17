@@ -46,6 +46,25 @@ const CoveragePageWrapper = styled.section<any>`
     padding-top: 40px;
     max-width: 1200px;
     margin: 0 auto;
+
+    .carousel-control-next {
+      justify-content: flex-end;
+    }
+
+    .carousel-control-prev {
+      justify-content: flex-start;
+    }
+
+    .carousel-control-next-icon {
+      background-color: #000f38;
+      width: 30%;
+      height: 15%;
+    }
+    .carousel-control-prev-icon {
+      background-color: #000f38;
+      width: 30%;
+      height: 15%;
+    }
   }
 
   .plan-button-section {
@@ -134,7 +153,7 @@ const CoveragePage = (props: any) => {
         </div>
         <div className="slider-section">
           <RichText render={pageContent.body[0].primary.slider_title} />
-          <Carousel>
+          <Carousel pause={false}>
             {pageContent.body[0].fields.map((slide: any, i: any) => {
               return (
                 <Carousel.Item key={i}>

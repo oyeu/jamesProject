@@ -17,10 +17,10 @@ export const query = graphql`
             promotion_title
             show_promotion
             promotion_plan {
-              discount
               old_normal_price
-              old_xxx_price
+              promotion_price
               plan_description
+              button_code
             }
           }
         }
@@ -53,6 +53,8 @@ const PromotionPageWrapper = styled.section`
       .pp-button {
         padding-top: 20px;
         border: solid;
+        border-width: 2px;
+        border-style: groove;
         max-width: 30%;
         margin: 0 auto;
       }
@@ -101,18 +103,12 @@ const PromotionPage = (props: any) => {
             </div>
             <div className="plan-price">
               <div className="old-price">
-                <span>Antes</span> {promotionPlan.old_normal_price}$ /{" "}
-                {promotionPlan.old_xxx_price}$ con canales XXX
+                <span>Antes</span> {promotionPlan.old_normal_price}$ con canales
+                para adultos
               </div>
               <div className="new-price">
-                <span>Ahora</span>{" "}
-                {promotionPlan.old_normal_price -
-                  promotionPlan.old_normal_price *
-                    (promotionPlan.discount / 100)}
-                $ /{" "}
-                {promotionPlan.old_xxx_price -
-                  promotionPlan.old_xxx_price * (promotionPlan.discount / 100)}
-                $ con canales XXX
+                <span>Ahora</span> {promotionPlan.promotion_price}$ con canales
+                para adultos
               </div>
             </div>
             <div className="pp-button">
@@ -125,7 +121,7 @@ const PromotionPage = (props: any) => {
                 <input
                   type="hidden"
                   name="hosted_button_id"
-                  value="2FL8YUDK5RTT8"
+                  value={promotionPlan.button_code}
                 />
                 <input
                   type="image"
