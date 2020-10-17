@@ -71,7 +71,7 @@ const AppCard = ({ link, logo, name, targetDevice }: any) => {
         <div className="app-content">
           <RichText render={targetDevice} />
           <Button>
-            <Link to={link}>Descargar</Link>
+            <a href={link} target='blank'>Descargar</a>
           </Button>
         </div>
       </div>

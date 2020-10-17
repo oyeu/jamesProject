@@ -15,6 +15,16 @@ const ButtonWrapper = styled.div`
   border-color: #ca0603;
   border-width: 5px;
 
+  :hover {
+    background: #ca0603;
+    border-color: #dcda15;
+    color: white;
+
+    a{
+      color:white;
+    }
+  }
+
   a {
     font-size: 50px;
     text-decoration: none;

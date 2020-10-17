@@ -38,6 +38,16 @@ const Button = styled.div`
   border-style: outset;
   border-color: #ca0603;
 
+  :hover {
+    background: #ca0603;
+    border-color: #dcda15;
+    color: white;
+
+    a{
+      color:white;
+    }
+  }
+
   a {
     color: black;
     text-decoration: none;
