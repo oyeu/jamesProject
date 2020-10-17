@@ -66,7 +66,7 @@ const PriceItem = ({
       <RichText render={title} />
       <div className="buttons-container">
         <div>
-          <p>{price}$ sin XXX</p>
+          <p>{price}$</p>
           <form
             action="https://www.paypal.com/cgi-bin/webscr"
             method="post"
@@ -93,7 +93,7 @@ const PriceItem = ({
           </form>
         </div>
         <div>
-          <p>{pricexxx}$ con XXX</p>
+          <p>{pricexxx}$ + adultos</p>
           <form
             action="https://www.paypal.com/cgi-bin/webscr"
             method="post"
