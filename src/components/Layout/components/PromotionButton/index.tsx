@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { graphql, Link, StaticQuery } from "gatsby"
 import RichText from "../../../RichText"
+import "./index.css"
 
 const query = graphql`
   {
@@ -71,12 +72,12 @@ const PromotionButton = () => {
         data = data.prismic.allPromotion_types.edges[0].node
         if (data.show_promotion) {
           return (
-            <PromotionButtonWrapper>
+            <div className="promotion-button-wrapper">
               <Link to={`/${data._meta.uid}`}>
                 <RichText render={data.promotion_subtitle} />
                 ¡Enterate aquí!
               </Link>
-            </PromotionButtonWrapper>
+            </div>
           )
         } else {
           return null

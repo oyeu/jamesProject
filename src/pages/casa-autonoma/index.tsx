@@ -4,6 +4,7 @@ import styled from "styled-components"
 import Layout from "../../components/Layout"
 import RichText from "../../components/RichText"
 import PageTitleSection from "../../components/PageTitleSection"
+import "./index.css"
 
 export const query = graphql`
   {
@@ -44,7 +45,7 @@ const PageWrapper = styled.section<any>`
     background-size: cover;
   }
 
-  .content {
+  .house-content {
     padding-top: 20px;
     position: relative;
     z-index: 2;
@@ -71,45 +72,9 @@ const PageWrapper = styled.section<any>`
       }
 
       .contact-button {
-        align-items: center;
-        justify-content: center;
         display: flex;
         align-items: center;
         justify-content: center;
-
-        .btn-wrapper {
-          width: 20rem;
-          height: 5rem;
-          display: flex;
-          background: #dcda15;
-          cursor: pointer;
-          border: solid;
-          border-style: outset;
-          border-width: 5px;
-          border-color: #ca0603;
-          color: black;
-
-          :hover {
-            background: #ca0603;
-            border-color: #dcda15;
-            color: white;
-
-            a {
-              color: white;
-            }
-          }
-
-          a {
-            text-decoration: none;
-            display: flex;
-            width: 100%;
-            height: 100%;
-            align-items: center;
-            justify-content: center;
-            color: black;
-            font-weight: bold;
-          }
-        }
       }
     }
 
@@ -172,7 +137,7 @@ const CasaAutonomaPage = (props: any) => {
     <Layout>
       <PageTitleSection title={pageContent.title} />
       <PageWrapper backgroundImage={pageContent.background_image.url}>
-        <div className="content">
+        <div className="house-content">
           <div className="section">
             <div className="section-text">
               <div>

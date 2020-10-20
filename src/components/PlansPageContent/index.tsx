@@ -2,6 +2,7 @@ import React from "react"
 import RichText from "../RichText"
 import styled from "styled-components"
 import { navigate } from "gatsby"
+import "./index.css"
 
 interface Props {
   backgroundImage: any
@@ -26,48 +27,7 @@ const PageContentWrapper = styled.section<Props>`
     background-position: 50% 0;
     background-size: cover;
   }
-
-  .page_title {
-    text-align: center;
-  }
-
-  .content {
-    position: relative;
-    z-index: 2;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-
-    .left-side-content {
-    }
-
-    .right-side-content {
-      div img {
-        max-width: 300px;
-      }
-    }
-  }
-`
-
-const ButtonsGrid = styled.div`
-  display: flex;
-  button {
-    margin: auto;
-    width: 40%;
-    background: #dcda15;
-    border-radius: 15px;
-    border: solid;
-    border-style: outset;
-    border-width: 5px;
-    border-color: #ca0603;
-
-    :hover {
-      background: #ca0603;
-      border-color: #dcda15;
-      color: white;
-    }
-  }
+}
 `
 
 const PlansPageContent = ({
@@ -80,7 +40,7 @@ const PlansPageContent = ({
 }: any) => {
   return (
     <PageContentWrapper backgroundImage={backgroundImage}>
-      <div className="content">
+      <div className="plan-content">
         <div className="left-side-content">
           <div className="page_subtitle">
             <RichText render={subtitle} />
@@ -88,8 +48,9 @@ const PlansPageContent = ({
           <div className="plans_description">
             <RichText render={content} />
           </div>
-          <ButtonsGrid>
+          <div className="button-grid">
             <button
+              className="help-button"
               onClick={() => {
                 navigate("https://wa.link/0j7qpr")
               }}
@@ -97,13 +58,14 @@ const PlansPageContent = ({
               WhatsApp
             </button>
             <button
+              className="help-button"
               onClick={() => {
                 navigate("/contact-page")
               }}
             >
               Formulario
             </button>
-          </ButtonsGrid>
+          </div>
         </div>
         <div className="right-side-content">
           <div>

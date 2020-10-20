@@ -1,61 +1,7 @@
 import React from "react"
-import styled from "styled-components"
 import RichText from "../../../../../RichText"
 import { Link } from "gatsby"
-
-const CallToActionBlockWrapper = styled.section`
-  padding: 20px;
-  margin: 10px;
-  background: #eee;
-  border-radius: 5px;
-
-  .call-to-action-content {
-    display: flex;
-    .featured-image-wrapper {
-      margin: 0 10px;
-      background: white;
-      padding: 10px;
-      border-radius: 10px;
-      margin-left: auto;
-      display: flex;
-      align-self: center;
-    }
-    img {
-      max-width: 200px;
-      margin: 0;
-    }
-  }
-`
-
-const Button = styled.div`
-  text-align: center;
-  background: #dcda15;
-  display: inline-block;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
-  border: solid;
-  border-style: outset;
-  border-color: #ca0603;
-
-  :hover {
-    background: #ca0603;
-    border-color: #dcda15;
-    color: white;
-
-    a{
-      color:white;
-    }
-  }
-
-  a {
-    color: black;
-    text-decoration: none;
-    padding: 4px 8px;
-    display: inline-block;
-    width: 100%;
-  }
-`
+import "./index.css"
 
 const CallToActionBlock = ({
   title,
@@ -65,20 +11,30 @@ const CallToActionBlock = ({
   featuredImage,
 }: any) => {
   return (
-    <CallToActionBlockWrapper>
-      <RichText render={title} />
-      <div className="call-to-action-content">
-        <div>
-          <RichText render={content} />
+    <>
+      <section className="cta-block-wrapper">
+        <div className="cta-content">
+          <div className="title">
+            <RichText render={title} />
+          </div>
+          <div className="content">
+            <RichText render={content} />
+          </div>
         </div>
-        <div className="featured-image-wrapper">
+        <div className="cta-img">
           <img src={featuredImage} alt="" />
         </div>
+      </section>
+      <div className="button">
+        <Link to={buttonDestination}>
+          <span />
+          <span />
+          <span />
+          <span />
+          {buttonLabel}
+        </Link>
       </div>
-      <Button>
-        <Link to={buttonDestination}>{buttonLabel}</Link>
-      </Button>
-    </CallToActionBlockWrapper>
+    </>
   )
 }
 

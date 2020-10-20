@@ -1,0 +1,55 @@
+.demo-page-button {
+    margin:auto;
+    padding:0;
+    width:40%;
+    height:100px;
+    border:none;
+    border-radius:4px;
+    transition:ease-out 0.3s;
+    position:relative;
+    outline:none;
+    z-index:1;
+    background-color:lightgray;
+    font-weight:bold;
+    text-transform: uppercase;
+}
+
+.demo-page-button:hover {
+    color:black;
+}
+
+.demo-page-button::before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left:50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    background-color:#dcda15;
+    
+}
+
+.demo-page-button:hover::before {
+    transition: 0.5s all ease;
+    left:0;
+    right:0;
+    opacity: 1;
+    z-index: -1;
+    border-radius: 4px;
+    
+}
+
+.buttons-container {
+    display: flex;
+    padding-top: 4em;
+}
+
+.demo-content {
+    padding: 100px;
+    margin: auto;
+    max-width: 1200px;
+    position: relative;
+    z-index: 2;
+  }

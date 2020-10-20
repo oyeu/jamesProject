@@ -44,7 +44,7 @@ const CoveragePageWrapper = styled.section<any>`
   .slider-section {
     text-align: center;
     padding-top: 40px;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
 
     .carousel-control-next {
@@ -111,8 +111,12 @@ const CoveragePageWrapper = styled.section<any>`
           display: flex;
           width: 600px;
           height: 600px;
+          margin: 2em;
 
           img {
+            padding: 5%;
+            background: lightgrey;
+            border-radius: 10%;
           }
         }
 

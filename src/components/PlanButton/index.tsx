@@ -1,45 +1,18 @@
 import React from "react"
-import styled from "styled-components"
 import { Link } from "gatsby"
-
-const ButtonWrapper = styled.div`
-  text-align: center;
-  width: 50%;
-  background: #dcda15;
-  display: inline-block;
-  border-radius: 10px;
-  cursor: pointer;
-  margin: 0 auto;
-  border: solid;
-  border-style: outset;
-  border-color: #ca0603;
-  border-width: 5px;
-
-  :hover {
-    background: #ca0603;
-    border-color: #dcda15;
-    color: white;
-
-    a{
-      color:white;
-    }
-  }
-
-  a {
-    font-size: 50px;
-    text-decoration: none;
-    color: black;
-    padding: 4px 8px;
-    display: inline-block;
-    width: 100%;
-  }
-`
+import "./index.css"
 
 const PlanButton = () => {
   return (
-    <ButtonWrapper>
-      <Link to="/planes">Ver planes</Link>
-    </ButtonWrapper>
+    <div className="plan-button">
+      <Link to="/planes">
+        <span />
+        <span />
+        <span />
+        <span />
+        Ver planes
+      </Link>
+    </div>
   )
 }
 
