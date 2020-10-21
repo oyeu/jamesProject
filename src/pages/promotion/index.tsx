@@ -1,10 +1,10 @@
 import React from "react"
-import styled from "styled-components"
 import { graphql } from "gatsby"
 import RichText from "../../components/RichText"
-import PageTitleSection from "../../components/PageTitleSection"
 import Layout from "../../components/Layout"
-import ContactButton from "../../components/ContactButton"
+import ContactButton from "./components/ContactButton"
+import PageTitleSection from "../../components/PageTitleSection"
+import "./index.css"
 
 export const query = graphql`
   {
@@ -28,60 +28,6 @@ export const query = graphql`
     }
   }
 `
-
-const PromotionPageWrapper = styled.section`
-  color: white;
-
-  .promotion-grid {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-
-    .promotion-subtitle {
-      font-size: 30px;
-      font-weight: bold;
-    }
-
-    .plan-card {
-      padding-bottom: 20px;
-      background: #eee;
-      color: black;
-      border-radius: 10px;
-
-      .pp-button {
-        padding-top: 20px;
-        border: solid;
-        border-width: 2px;
-        border-style: groove;
-        max-width: 30%;
-        margin: 0 auto;
-      }
-
-      .plan-description {
-        padding-top: 20px;
-      }
-
-      .plan-price {
-        .old-price {
-          text-decoration: line-through;
-
-          span {
-            color: red;
-          }
-        }
-
-        .new-price {
-          span {
-            color: green;
-          }
-        }
-      }
-    }
-  }
-`
-
 const PromotionPage = (props: any) => {
   const pageContent = props.data.prismic.allPromotion_types.edges[0].node
   const promotionPlan = pageContent.promotion_plan[0]
@@ -89,7 +35,7 @@ const PromotionPage = (props: any) => {
   return (
     <Layout>
       <PageTitleSection title={pageContent.promotion_title} />
-      <PromotionPageWrapper>
+      <section className="promotion-page-wrapper">
         <div className="promotion-grid">
           <div className="promotion-subtitle">
             <RichText render={pageContent.promotion_subtitle} />
@@ -140,7 +86,7 @@ const PromotionPage = (props: any) => {
           </div>
           <ContactButton />
         </div>
-      </PromotionPageWrapper>
+      </section>
     </Layout>
   )
 }

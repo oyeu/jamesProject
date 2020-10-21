@@ -1,0 +1,47 @@
+.promotion-page-wrapper {
+    color: white;
+}
+
+.promotion-grid {
+    padding-bottom: 40px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.promotion-subtitle {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.plan-card {
+    padding-bottom: 20px;
+    background: #eee;
+    color: black;
+    border-radius: 10px;
+}
+
+.pp-button {
+    padding-top: 20px;
+    border: solid;
+    border-width: 2px;
+    border-style: groove;
+    max-width: 30%;
+    margin: 0 auto;
+}
+
+.plan-description {
+    padding-top: 20px;
+}
+
+.old-price {
+    text-decoration: line-through;
+}
+
+.plan-price span{
+    color: red;
+}
+
+.new-price span {
+    color: green;
+}

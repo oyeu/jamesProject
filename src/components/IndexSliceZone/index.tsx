@@ -3,7 +3,6 @@ import MainSlide from "./components/MainSlide"
 import CallToActionGrid from "./components/CallToActionGrid"
 
 const SliceZone = ({ body }: any) => {
-  // console.log(body)
   return (
     <div>
       {body.map((bodyContent: any) => {

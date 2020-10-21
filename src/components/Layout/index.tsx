@@ -8,8 +8,8 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 import "./layout.css"
-import styled from "styled-components"
 import "bootstrap/dist/css/bootstrap.min.css"
+import styled from "styled-components"
 import DemoButton from "../DemoButton"
 import PromotionButton from "./components/PromotionButton"
 
@@ -80,7 +80,6 @@ const NavLink = styled.div`
     }
   }
 `
-
 const Header = styled.header`
   display: flex;
   background: #000f38;
@@ -97,7 +96,6 @@ const NavLinks = styled.div`
   margin-left: auto;
   display: flex;
 `
-
 const Branding = styled.div`
   display: flex;
   margin: auto 20px;
@@ -127,7 +125,6 @@ const Branding = styled.div`
   }
   
 `
-
 const LogoHeader = styled.div`
   display: flex;
 
@@ -138,24 +135,13 @@ const LogoHeader = styled.div`
     margin: 0;
   }
 `
-/*Neon rojo
-  text-shadow: 0 0 5px rgba(248, 5, 47, 1), 0 0 10px rgba(248, 5, 47, 1),
-      0 0 20px rgba(248, 5, 47, 1), 0 0 40px rgba(136, 14, 59, 1),
-      0 0 80px rgba(136, 14, 59, 1), 0 0 90px rgba(136, 14, 59, 1),
-      0 0 100px rgba(136, 14, 59, 1), 0 0 140px rgba(136, 14, 59, 1),
-      0 0 180px rgba(136, 14, 59, 1);
-*/
-// const Logo = styled.img``
-
 interface Links {
   link: { _meta: { uid: string | number | null | undefined } }
   label: React.ReactNode
 }
-
 interface Props {
   children: JSX.Element[] | JSX.Element
 }
-
 const Layout = ({ children }: Props) => {
   return (
     <>

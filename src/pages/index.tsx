@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-
 import Layout from "../components/Layout"
 import SliceZone from "../components/IndexSliceZone"
 import HouseButton from "../components/HouseButton"
@@ -72,8 +71,6 @@ export const query = graphql`
 `
 
 const IndexPage = (props: any) => {
-  // console.log(props)
-
   return (
     <Layout>
       <HouseButton />

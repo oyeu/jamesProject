@@ -1,0 +1,33 @@
+.slice-wrapper {
+    height: calc(140vh - 50vh);
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.slice-wrapper div {
+    height: inherit;
+} 
+
+.slide-wrapper {
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    display: flex;
+}
+
+.slide-wrapper .content-wrapper {
+    max-width: 800px;
+    margin: auto;
+    height: auto;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.slide-content {
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.slide-content h1 {
+    margin: 0px;
+}

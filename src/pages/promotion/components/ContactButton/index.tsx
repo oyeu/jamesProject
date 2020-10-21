@@ -1,18 +1,12 @@
 import { Link } from "gatsby"
 import React from "react"
-import styled from "styled-components"
-
-const ContactButtonWrapper = styled.div`
-  padding: 20px;
-  font-size: 20px;
-  text-align: center;
-`
+import "./index.css"
 
 const ContactButton = () => {
   return (
-    <ContactButtonWrapper>
+    <div className="contact-button-wrapper">
       ¿Tienes dudas?, puedes contactarnos <Link to={"/contact-page"}>aqui</Link>
-    </ContactButtonWrapper>
+    </div>
   )
 }
 
