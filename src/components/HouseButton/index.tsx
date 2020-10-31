@@ -28,6 +28,10 @@ const HouseButton = () => {
         return (
           <div className="house-button-wrapper">
             <Link to={`/${data._meta.uid}`}>
+              <span />
+              <span />
+              <span />
+              <span />
               <img src={data.button_image.url} alt="" />
               <div className="text">EL HOGAR EN SUS MANOS</div>
             </Link>

@@ -1,3 +1,48 @@
+
+.cta-block-wrapper-mobile {
+    display: block; 
+}
+
+.cta-block-wrapper-mobile .title-mobile h3{
+    color:white;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.cta-block-wrapper-mobile .cta-content-mobile {
+    display:flex;
+}
+
+.cta-block-wrapper-mobile .cta-content-mobile >div{
+    width:50%;
+    padding: 1%;
+}
+
+.cta-block-wrapper-mobile .cta-content-mobile .content-mobile {
+    color:white;
+    font-size: 0.65rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cta-block-wrapper-mobile .cta-content-mobile .content-mobile p{
+    margin:1%;
+}
+
+.cta-block-wrapper-mobile .cta-content-mobile .cta-img-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-block-wrapper-mobile .cta-content-mobile .cta-img-mobile img{
+    padding:1%;
+    background-color: lightgray;
+    border-radius: 4px;
+    margin:0;
+}
+
 .cta-block-wrapper {
     display:flex;
 }
@@ -7,53 +52,98 @@
     padding:1%
 }
 
-.title {
-   color:white; 
-}
-
-.content {
+.cta-block-wrapper .cta-content .title h3{
     color:white;
+    font-size: 1rem; 
+ }
+
+.cta-block-wrapper .cta-content .content {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.cta-img img{
-    padding:1%;
-    background-color: lightgray;
-    border-radius: 4px;
+.cta-block-wrapper .cta-content .content p{
+    color:white; 
+    font-size: 0.6rem;
+    margin:0;
 }
 
-.button {
+.cta-block-wrapper .cta-img {
     display:flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 2em;
 }
 
-.button a {
+.cta-block-wrapper .cta-img img{
+    padding:1%;
+    background-color: lightgray;
+    border-radius: 4px;
+    margin:0;
+}
+
+.button-mobile {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-mobile a {
     position: relative;
     display: inline-block;
-    padding: 15px 120px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin: 7%;
+    margin-bottom: 20%;
+    color:white;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+    overflow:hidden;
+    background:#2196f3;
+    box-shadow: 0 0 10px #2196f3,0 0 40px #2196f3,0 0 80px #2196f3;
+}   
+
+.button-desktop {
+    display:none;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-desktop a {
+    position: relative;
+    display: inline-block;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin: 4%;
+    margin-bottom: 5%;
     color:#2196f3;
     text-transform: uppercase;
     letter-spacing: 4px;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1rem;
     overflow:hidden;
     transition: 0.2s;
 }
 
-.button a:hover {
+.button-desktop a:hover {
     color: white;
     background:#2196f3;
     box-shadow: 0 0 10px #2196f3,0 0 40px #2196f3,0 0 80px #2196f3;
     transition-delay: 1s;
 }
 
-.button a span {
+.button-desktop a span {
     position: absolute;
     display:block;
 }
 
-.button a span:nth-child(1) {
+.button-desktop a span:nth-child(1) {
     top:0;
     left:-100%;
     width:100%;
@@ -61,12 +151,12 @@
     background: linear-gradient(90deg, transparent, #2196f3);
 }
 
-.button a:hover span:nth-child(1) {
+.button-desktop a:hover span:nth-child(1) {
     left:100%;
     transition:1s;
 }
 
-.button a span:nth-child(3) {
+.button-desktop a span:nth-child(3) {
     bottom:0;
     right:-100%;
     width:100%;
@@ -74,13 +164,13 @@
     background: linear-gradient(270deg, transparent, #2196f3);
 }
 
-.button a:hover span:nth-child(3) {
+.button-desktop a:hover span:nth-child(3) {
     right:100%;
     transition:1s;
     transition-delay: 0.5s;
 }
 
-.button a span:nth-child(2) {
+.button-desktop a span:nth-child(2) {
     top:-100%;
     right:0;
     width:2px;
@@ -88,13 +178,13 @@
     background: linear-gradient(180deg, transparent, #2196f3);
 }
 
-.button a:hover span:nth-child(2) {
+.button-desktop a:hover span:nth-child(2) {
     top:100%;
     transition:1s;
     transition-delay: 0.25s;
 }
 
-.button a span:nth-child(4) {
+.button-desktop a span:nth-child(4) {
     bottom:-100%;
     left:0;
     width:2px;
@@ -102,8 +192,72 @@
     background: linear-gradient(360deg, transparent, #2196f3);
 }
 
-.button a:hover span:nth-child(4) {
+.button-desktop a:hover span:nth-child(4) {
     bottom:100%;
     transition:1s;
     transition-delay: 0.75s;
+}
+
+
+
+@media only screen and (orientation:portrait) {
+    .cta-block-wrapper {
+        display:none;
+    }
+
+}
+
+@media only screen and (min-width:768px) and (orientation:landscape){
+    .cta-block-wrapper {
+        display:flex;
+    }
+    .cta-block-wrapper-mobile {
+        display:none;
+    }
+    .button-mobile {
+        display: none;
+    }
+    .button-desktop {
+        display: flex;
+    }
+}
+
+@media only screen and (min-width:992px) and (orientation:landscape){
+    .cta-block-wrapper .cta-content .content p{ 
+        font-size: 0.8rem;
+    }
+
+    .button-desktop a {
+        font-size: 1.2rem;
+    }
+
+    .cta-block-wrapper .cta-content .title h3{
+        font-size: 1.2rem; 
+     }
+}
+
+@media only screen and (min-width:1200px) and (orientation:landscape){
+    .cta-block-wrapper .cta-content .content p{ 
+        font-size: 0.9rem;
+    }
+
+    .button-desktop a {
+        font-size: 1.5rem;
+    }
+    .cta-block-wrapper .cta-content .title h3{
+        font-size: 1.5rem; 
+     }
+}
+
+@media only screen and (min-width:1400px) and (orientation:landscape){
+    .cta-block-wrapper .cta-content .content p{ 
+        font-size: 1rem;
+    }
+
+    .button-desktop a {
+        font-size: 1.76rem;
+    }
+    .cta-block-wrapper .cta-content .title h3{
+        font-size: 1.76rem; 
+     }
 }

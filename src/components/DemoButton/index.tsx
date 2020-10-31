@@ -8,7 +8,7 @@ const DemoButton = ({ type }: any) => {
       {type === "header" ? (
         <section className="header-button-section">
           <button
-            className="demo-button"
+            className="demo-button header-demo-button"
             onClick={() => {
               navigate("/demo-page")
             }}

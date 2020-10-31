@@ -4,19 +4,9 @@
     left: 0;
     z-index: 3;
     text-align: center;
-    font-size: 20px;
     font-weight: bold;
-    border: solid;
-    border-style: outset;
-    border-width: 5px;
-}
-
-.house-button-wrapper:hover {
-    border-color: #dcda15;
-}
-
-.house-button-wrapper a{
-    text-decoration: none;
+    font-size: 0.57rem;
+    width: 19%;
 }
 
 .house-button-wrapper a .text {
@@ -26,5 +16,114 @@
 
 .house-button-wrapper a img {
     margin: 0;
+    width: 100%;
+}
+
+.house-button-wrapper a {
+    position: relative;
+    display: inline-block;
+    padding: 15px auto;
+    color:#ca0603;
+    text-transform: uppercase;
+    text-decoration: none;
+    overflow:hidden;
+    transition: 0.2s;
+}
+
+.house-button-wrapper a:hover {
+    color: white;
+    background:#ca0603;
+    box-shadow: 0 0 10px #ca0603,0 0 40px #ca0603,0 0 80px #ca0603;
+    transition-delay: 1s;
+}
+
+.house-button-wrapper a span {
+    position: absolute;
+    display:block;
+}
+
+.house-button-wrapper a span:nth-child(1) {
+    top:0;
+    left:-100%;
+    width:100%;
+    height:2px;
+    background: linear-gradient(90deg, transparent, #ca0603);
+}
+
+.house-button-wrapper a:hover span:nth-child(1) {
+    left:100%;
+    transition:1s;
+}
+
+.house-button-wrapper a span:nth-child(3) {
+    bottom:0;
+    right:-100%;
+    width:100%;
+    height:2px;
+    background: linear-gradient(270deg, transparent, #ca0603);
+}
+
+.house-button-wrapper a:hover span:nth-child(3) {
+    right:100%;
+    transition:1s;
+    transition-delay: 0.5s;
+}
+
+.house-button-wrapper a span:nth-child(2) {
+    top:-100%;
+    right:0;
+    width:2px;
+    height:100%;
+    background: linear-gradient(180deg, transparent, #ca0603);
+}
+
+.house-button-wrapper a:hover span:nth-child(2) {
+    top:100%;
+    transition:1s;
+    transition-delay: 0.25s;
+}
+
+.house-button-wrapper a span:nth-child(4) {
+    bottom:-100%;
+    left:0;
+    width:2px;
+    height:100%;
+    background: linear-gradient(360deg, transparent, #ca0603);
+}
+
+.house-button-wrapper a:hover span:nth-child(4) {
+    bottom:100%;
+    transition:1s;
+    transition-delay: 0.75s;
+}
+
+@media only screen and (orientation:portrait) {
+    .house-button-wrapper {
+        display:none
+    }
+}
+
+@media only screen and (min-width:768px) and (orientation:landscape){
+    .house-button-wrapper {
+        font-size: 0.57rem;
+    }
+}
+
+@media only screen and (min-width:992px) and (orientation:landscape){
+    .house-button-wrapper {
+        font-size: 0.75rem;
+    }
+}
+
+@media only screen and (min-width:1200px) and (orientation:landscape){
+    .house-button-wrapper {
+        font-size: 0.94rem;
+    }
+}
+
+@media only screen and (min-width:1400px) and (orientation:landscape){
+    .house-button-wrapper {
+        font-size: 1rem;
+    }
 }
 

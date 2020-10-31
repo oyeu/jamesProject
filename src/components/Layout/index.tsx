@@ -8,8 +8,8 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 import "./layout.css"
-import "bootstrap/dist/css/bootstrap.min.css"
 import styled from "styled-components"
+import "bootstrap/dist/css/bootstrap.min.css"
 import DemoButton from "../DemoButton"
 import PromotionButton from "./components/PromotionButton"
 
@@ -54,14 +54,9 @@ const navigationQuery = graphql`
   }
 `
 
-const Main = styled.main`
-  margin: 0 auto;
-  background: #000f38;
-  height: 100%;
-`
-
 const NavLink = styled.div`
   margin: auto 0;
+
   a {
     color: #fff;
     padding: 0 16px;
@@ -80,56 +75,15 @@ const NavLink = styled.div`
     }
   }
 `
-const Header = styled.header`
-  display: flex;
-  background: #000f38;
-  height: 100%;
-  padding-right: 20px;
-  position: sticky;
-  top: 0;
-  z-index: 3;
-  border-bottom: solid;
-  border-style: inline;
-  border-color: #dcda15;
-`
 const NavLinks = styled.div`
   margin-left: auto;
   display: flex;
-`
-const Branding = styled.div`
-  display: flex;
-  margin: auto 20px;
-  padding: 0 10px;
-  font-weight: bold;
-  color: #fff;
-  font-size: 30px;
-
-  text-shadow: 0 0 5px rgba(0, 178, 255, 1), 0 0 10px rgba(0, 178, 255, 1),
-    0 0 20px rgba(0, 178, 255, 1), 0 0 40px rgba(38, 104, 127, 1),
-    0 0 80px rgba(38, 104, 127, 1), 0 0 90px rgba(38, 104, 127, 1),
-    0 0 100px rgba(38, 104, 127, 1), 0 0 140px rgba(38, 104, 127, 1),
-    0 0 180px rgba(38, 104, 127, 1);
-  
-  .branding {
-    a {
-      color:inherit;
-    }
-  }
-  
-  .subranding {
-    display: flex;
-    margin-left: 20px;
-    font-size: 16px;
-    content
-    
-  }
-  
 `
 const LogoHeader = styled.div`
   display: flex;
 
   img {
-    width: 35%;
+    width: 74%;
     border: 1px solid #ddd;
     height: auto;
     margin: 0;
@@ -153,18 +107,12 @@ const Layout = ({ children }: Props) => {
           return (
             <>
               <PromotionButton />
-              <Header>
+              <header className="header-section">
                 <LogoHeader>
                   <img src={headerContent.logo.url} alt="logo header" />
                 </LogoHeader>
-                <Branding>
-                  <div className="branding">
-                    <Link to="/">{headerContent.branding}</Link>
-                  </div>
-                  <div className="subranding">{headerContent.subranding}</div>
-                </Branding>
+                <DemoButton type="header" />
                 <NavLinks>
-                  <DemoButton type="header" />
                   {headerContent.navigation_links.map((link: Links) => {
                     if (link.link._meta.uid === "inicio") {
                       return (
@@ -183,12 +131,12 @@ const Layout = ({ children }: Props) => {
                     }
                   })}
                 </NavLinks>
-              </Header>
+              </header>
             </>
           )
         }}
       />
-      <Main>{children}</Main>
+      <main className="main-content">{children}</main>
     </>
   )
 }

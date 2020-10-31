@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i|Rubik:400,400i,700,700i&display=swap');
 html {
-  font-family: 'Karla', sans-serif;
+  
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -613,5 +613,30 @@ pre tt:after {
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
+  }
+}
+
+.main-content {
+  margin: 0 auto;
+  background: #000f38;
+  height: 100%;
+}
+
+.header-section {
+  display: flex;
+  background: #000f38;
+  height: 100%;
+  padding-right: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  border-bottom: solid;
+  border-style: inline;
+  border-color: #dcda15;
+}
+
+@media only screen and (orientation:portrait) {
+  .header-section {
+    display: none;
   }
 }

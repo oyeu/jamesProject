@@ -1,0 +1,50 @@
+
+    .call-to-action-grid {
+        width: 90%;
+        margin: auto;
+    }
+
+    .call_to_action_section_title {
+        color: white;
+        text-align: center;
+        margin: 50px auto;
+      }
+
+    .call_to_action_section_title h2{
+        font-size: 1.5rem;
+    }
+
+    @media only screen and (orientation:portrait) {
+        
+    }
+    
+    @media only screen and (min-width:768px) and (orientation:landscape){
+        .call-to-action-grid {
+            width: 60%;
+            margin: auto;
+            padding-bottom: 20px;
+        }
+        
+        .call_to_action_section_title h2{
+            font-size: 1rem;
+        }
+    }
+    
+    @media only screen and (min-width:992px) and (orientation:landscape){
+        .call_to_action_section_title h2{
+            font-size: 1.3rem;
+        }
+    }
+    
+    @media only screen and (min-width:1200px) and (orientation:landscape){
+        .call_to_action_section_title h2{
+            font-size: 1.6rem;
+        }
+    }
+    
+    @media only screen and (min-width:1400px) and (orientation:landscape){
+        .call_to_action_section_title h2{
+            font-size: 1.86rem;
+        }
+    }
+

@@ -19,6 +19,10 @@
     font-weight:bold;
 }
 
+.header-demo-button {
+    margin-right:0;
+}
+
 .demo-button:hover {
     color:black;
 }
@@ -46,3 +50,8 @@
     
 }
 
+@media screen and (max-width: 768px) {
+    .demo-button {
+        display:none;
+    }
+}
