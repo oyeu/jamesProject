@@ -1,0 +1,83 @@
+.price-item-wrapper {
+    background: #eee;
+    color: #000f38;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    border: solid;
+    box-shadow: 0 0 5px #2196f3,0 0 10px #2196f3,0 0 15px #2196f3;
+}
+
+.price-item-wrapper h3{
+    font-size: 1.3rem;
+    padding:2%;
+    margin:0;
+}
+
+.price-item-wrapper .plan-buttons-container {
+    display:flex;
+    width: 100%;
+}
+
+.price-item-wrapper .plan-buttons-container div{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin:4%;
+    box-shadow: 0 0 1px #2196f3,0 0 2px #2196f3,0 0 3px #2196f3;
+    padding:4%;
+    justify-content: center;
+}
+
+.price-item-wrapper .plan-buttons-container div p {
+    margin:1%;
+}
+
+.price-item-wrapper .plan-buttons-container div form{
+    margin:0;
+}
+
+.price-item-wrapper .plan-buttons-container div form input{
+    width: 100%;
+}
+
+.price-item-wrapper .plan-buttons-container div form img{
+    display:none;
+}
+
+
+
+@media only screen and (min-width:768px) and (orientation:landscape){
+   
+}
+
+@media only screen and (min-width:992px) and (orientation:landscape){
+    .price-item-wrapper .plan-buttons-container {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .price-item-wrapper .plan-buttons-container div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        margin:4%;
+        box-shadow: 0 0 1px #2196f3,0 0 2px #2196f3,0 0 3px #2196f3;
+        padding:4%;
+    }
+
+    .price-list >div{
+        width:33%;
+    }
+}
+
+@media only screen and (min-width:1200px) and (orientation:landscape){
+    
+}
+
+@media only screen and (min-width:1400px) and (orientation:landscape){
+    
+}

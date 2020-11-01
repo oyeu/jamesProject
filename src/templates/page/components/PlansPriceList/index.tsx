@@ -1,23 +1,14 @@
 import React from "react"
-import RichText from "../RichText"
-import styled from "styled-components"
+import RichText from "../../../../components/RichText"
 import PriceItem from "./components/PlansPriceItem"
-
-const PriceListWrapper = styled.section`
-  text-align: center;
-  margin: 40px auto;
-
-  > div:last-child {
-    display: flex;
-  }
-`
+import "./index.css"
 
 const PriceList = ({ title, priceItems }: any) => {
   return (
-    <PriceListWrapper>
+    <section className="price-list-wrapper">
       <RichText render={title} />
 
-      <div className="">
+      <div className="price-list">
         {priceItems.map((priceItem: any, i: number) => {
           return (
             <PriceItem
@@ -31,7 +22,7 @@ const PriceList = ({ title, priceItems }: any) => {
           )
         })}
       </div>
-    </PriceListWrapper>
+    </section>
   )
 }
 

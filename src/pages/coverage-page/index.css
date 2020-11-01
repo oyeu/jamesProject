@@ -1,0 +1,171 @@
+
+.coverage-page-wrapper {
+    color: white;
+    margin:auto;
+    width: 90%;
+    text-align: center;
+
+}
+
+.coverage-page-wrapper .coverage-info-mobile .title-section h2{
+    font-size: 1.5rem;
+}
+
+.coverage-page-wrapper .coverage-info-mobile {
+    font-size: 0.8rem;
+}
+
+.coverage-page-wrapper .coverage-info-mobile .content-img{
+    background:lightgray;
+    border-radius: 5px;
+    margin-bottom:5%;
+}
+
+.coverage-page-wrapper .coverage-info-mobile .content-img img{
+    padding:1%;
+    margin:0;
+}
+
+.coverage-page-wrapper ul li{
+    margin:2%;
+    text-align: left;
+}
+
+.slider-section h2 {
+    font-size: 1.5rem;
+}
+
+.slider-section img {
+    margin:0;
+}
+
+.slider-section .carousel-control-next {
+    justify-content: flex-end;
+  }
+
+.slider-section .carousel-control-prev {
+    justify-content: flex-start;
+  }
+.slider-section .carousel-control-next-icon {
+    background-color: #000f38;
+    width: 50%;
+    height: 15%;
+    border-radius: 50%;
+  }
+.slider-section .carousel-control-prev-icon {
+    background-color: #000f38;
+    width: 50%;
+    height: 15%;
+    border-radius: 50%;
+  }
+
+.coverage-info-desktop {
+    display: none;
+}
+
+.coverage-info-desktop .title-section h2{
+    font-size: 1.5rem;
+}
+
+.coverage-info-desktop .content-section {
+    display: flex;
+    margin-bottom: 5%; 
+}
+
+.coverage-info-desktop .content-section >div{
+    width:50%;
+    padding:2%;
+}
+
+.coverage-page-wrapper .coverage-info-desktop {
+    font-size: 0.8rem;
+}
+
+.coverage-info-desktop .content-section .content-img{
+    display:flex;
+    margin:auto;
+    background: lightgray;
+    border-radius: 5px;
+}
+
+.coverage-info-desktop .content-section .content-img img{
+    padding:0.1%;
+    margin:0;
+}
+
+.coverage-info-desktop .content-section .content-text{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (min-width:768px) and (orientation:landscape){
+    .coverage-page-wrapper .coverage-info-mobile .title-section h2{
+        font-size: 1.5rem;
+    }
+
+    .slider-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .coverage-page-wrapper {
+        width: 65%;
+    }
+
+    .coverage-page-wrapper .coverage-info-mobile {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width:992px) and (orientation:landscape){
+    .coverage-info-mobile {
+        display: none;
+    }
+
+    .coverage-info-desktop {
+        display: block;
+    }
+
+    .coverage-page-wrapper {
+        width: 68%;
+    }
+    
+    .slider-section h2 {
+        font-size: 1.9rem;
+    }
+
+    .coverage-info-desktop .title-section h2{
+        font-size: 1.9rem;
+    }
+    
+}
+
+@media only screen and (min-width:1200px) and (orientation:landscape){
+    .slider-section h2 {
+        font-size: 2.3rem;
+    }
+
+    .coverage-page-wrapper .coverage-info-desktop {
+        font-size: 1rem;
+    }
+
+    .coverage-info-desktop .title-section h2{
+        font-size: 2.3rem;
+    }
+    
+}
+
+@media only screen and (min-width:1400px) and (orientation:landscape){
+    .slider-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .coverage-page-wrapper .coverage-info-desktop {
+        font-size: 1.1rem;
+    }
+
+    .coverage-info-desktop .title-section h2{
+        font-size: 2.5rem;
+    }
+}

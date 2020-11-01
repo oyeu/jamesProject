@@ -1,0 +1,30 @@
+.plan-page-wrapper {
+    color: white;
+    width:90%;
+    margin:auto;   
+    background-color: #000f38;
+}
+
+
+@media only screen and (orientation:portrait) {
+}
+
+@media only screen and (min-width:768px) and (orientation:landscape){
+    .plan-page-wrapper {
+        width:65%;   
+    }
+}
+
+@media only screen and (min-width:992px) and (orientation:landscape){
+    .plan-page-wrapper {
+        width:70%;   
+    }
+}
+
+@media only screen and (min-width:1200px) and (orientation:landscape){
+    
+}
+
+@media only screen and (min-width:1400px) and (orientation:landscape){
+    
+}

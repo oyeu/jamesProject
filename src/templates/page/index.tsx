@@ -1,10 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/Layout"
-import styled from "styled-components"
-import PriceList from "../components/PlansPriceList"
-import PlanPageContent from "../components/PlansPageContent"
-import PageTitleSection from "../components/PageTitleSection"
+import Layout from "../../components/Layout"
+import PriceList from "./components/PlansPriceList"
+import PlanPageContent from "./components/PlansPageContent"
+import PageTitleSection from "../../components/PageTitleSection"
+import "./index.css"
 
 export const query = graphql`
   query PageQuery($id: String) {
@@ -44,26 +44,14 @@ export const query = graphql`
     }
   }
 `
-const PageWrapper = styled.section`
-  color: white;
-
-  .pricelist-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  > div:last-child {
-    padding-bottom: 20px;
-  }
-`
 
 const Page = (props: any) => {
   // console.log(props)
   const pageContent = props.data.prismic.allPages.edges[0].node
   return (
     <Layout>
-      <PageWrapper>
-        <PageTitleSection title={pageContent.page_title} />
+      <PageTitleSection title={pageContent.page_title} />
+      <section className="plan-page-wrapper">
         <PlanPageContent
           subtitle={pageContent.subtitle}
           content={pageContent.content}
@@ -83,7 +71,7 @@ const Page = (props: any) => {
             )
           })}
         </div>
-      </PageWrapper>
+      </section>
     </Layout>
   )
 }

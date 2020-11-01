@@ -16,7 +16,7 @@ module.exports = {
           type:'Page',
           match:'/:uid',
           path:'/',
-          component: require.resolve('./src/templates/page.tsx')
+          component: require.resolve('./src/templates/page/index.tsx')
         }]
       }
     },

@@ -4,7 +4,7 @@ import "./index.css"
 
 const PlanButton = () => {
   return (
-    <div className="plan-button">
+    <div className="mobile-plan-button">
       <Link to="/planes">
         <span />
         <span />

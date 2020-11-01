@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import RichText from "../../../RichText"
+import RichText from "../../../../../../components/RichText"
 import "./index.css"
 
 const PriceItemWrapper = styled.div`
@@ -62,9 +62,9 @@ const PriceItem = ({
   xxxBtnCode,
 }: any) => {
   return (
-    <PriceItemWrapper>
+    <div className="price-item-wrapper">
       <RichText render={title} />
-      <div className="buttons-container">
+      <div className="plan-buttons-container">
         <div>
           <p>{price}$</p>
           <form
@@ -116,7 +116,7 @@ const PriceItem = ({
           </form>
         </div>
       </div>
-    </PriceItemWrapper>
+    </div>
   )
 }
 

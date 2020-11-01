@@ -1,86 +1,118 @@
-.plan-button {
+.mobile-plan-button {
     display:flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 2em;
 }
 
-.plan-button a {
+.mobile-plan-button a {
     position: relative;
     display: inline-block;
-    padding: 15px 12em;
-    color:#2196f3;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin: 7%;
+    margin-bottom: 10%;
+    color:white;
     text-transform: uppercase;
     letter-spacing: 4px;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1rem;
     overflow:hidden;
-    transition: 0.2s;
-}
-
-.plan-button a:hover {
-    color: white;
     background:#2196f3;
     box-shadow: 0 0 10px #2196f3,0 0 40px #2196f3,0 0 80px #2196f3;
-    transition-delay: 1s;
+}   
+
+@media only screen and (min-width:768px) and (orientation:landscape){
+    .mobile-plan-button a {
+        color:#2196f3;
+        transition: 0.2s;
+        background: none;
+        box-shadow: none;
+    }
+
+    .mobile-plan-button a:hover {
+        color: white;
+        background:#2196f3;
+        box-shadow: 0 0 10px #2196f3,0 0 40px #2196f3,0 0 80px #2196f3;
+        transition-delay: 1s;
+    }
+    
+    .mobile-plan-button a span {
+        position: absolute;
+        display:block;
+    }
+    
+    .mobile-plan-button a span:nth-child(1) {
+        top:0;
+        left:-100%;
+        width:100%;
+        height:2px;
+        background: linear-gradient(90deg, transparent, #2196f3);
+    }
+    
+    .mobile-plan-button a:hover span:nth-child(1) {
+        left:100%;
+        transition:1s;
+    }
+    
+    .mobile-plan-button a span:nth-child(3) {
+        bottom:0;
+        right:-100%;
+        width:100%;
+        height:2px;
+        background: linear-gradient(270deg, transparent, #2196f3);
+    }
+    
+    .mobile-plan-button a:hover span:nth-child(3) {
+        right:100%;
+        transition:1s;
+        transition-delay: 0.5s;
+    }
+    
+    .mobile-plan-button a span:nth-child(2) {
+        top:-100%;
+        right:0;
+        width:2px;
+        height:100%;
+        background: linear-gradient(180deg, transparent, #2196f3);
+    }
+    
+    .mobile-plan-button a:hover span:nth-child(2) {
+        top:100%;
+        transition:1s;
+        transition-delay: 0.25s;
+    }
+    
+    .mobile-plan-button a span:nth-child(4) {
+        bottom:-100%;
+        left:0;
+        width:2px;
+        height:100%;
+        background: linear-gradient(360deg, transparent, #2196f3);
+    }
+    
+    .mobile-plan-button a:hover span:nth-child(4) {
+        bottom:100%;
+        transition:1s;
+        transition-delay: 0.75s;
+    }
 }
 
-.plan-button a span {
-    position: absolute;
-    display:block;
+@media only screen and (min-width:992px) and (orientation:landscape){
+    .mobile-plan-button a {
+        font-size: 1.2rem;
+    }
 }
 
-.plan-button a span:nth-child(1) {
-    top:0;
-    left:-100%;
-    width:100%;
-    height:2px;
-    background: linear-gradient(90deg, transparent, #2196f3);
+@media only screen and (min-width:1200px) and (orientation:landscape){
+    .mobile-plan-button a {
+        font-size: 1.5rem;
+    }
 }
 
-.plan-button a:hover span:nth-child(1) {
-    left:100%;
-    transition:1s;
-}
-
-.plan-button a span:nth-child(3) {
-    bottom:0;
-    right:-100%;
-    width:100%;
-    height:2px;
-    background: linear-gradient(270deg, transparent, #2196f3);
-}
-
-.plan-button a:hover span:nth-child(3) {
-    right:100%;
-    transition:1s;
-    transition-delay: 0.5s;
-}
-
-.plan-button a span:nth-child(2) {
-    top:-100%;
-    right:0;
-    width:2px;
-    height:100%;
-    background: linear-gradient(180deg, transparent, #2196f3);
-}
-
-.plan-button a:hover span:nth-child(2) {
-    top:100%;
-    transition:1s;
-    transition-delay: 0.25s;
-}
-
-.plan-button a span:nth-child(4) {
-    bottom:-100%;
-    left:0;
-    width:2px;
-    height:100%;
-    background: linear-gradient(360deg, transparent, #2196f3);
-}
-
-.plan-button a:hover span:nth-child(4) {
-    bottom:100%;
-    transition:1s;
-    transition-delay: 0.75s;
+@media only screen and (min-width:1400px) and (orientation:landscape){
+    .mobile-plan-button a {
+        font-size: 1.76rem;
+    }
 }
