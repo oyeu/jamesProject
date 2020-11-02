@@ -1,0 +1,19 @@
+.manual-page-wrapper {
+    width: 90%;
+    margin:auto;
+}
+
+@media only screen and (min-width:768px) and (orientation:landscape){
+    .manual-page-wrapper {
+        width: 65%;
+
+    }
+    
+}
+
+@media only screen and (min-width:992px) and (orientation:landscape){
+    .manual-page-wrapper {
+        width: 70%;
+
+    }
+}

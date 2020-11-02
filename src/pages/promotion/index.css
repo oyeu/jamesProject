@@ -1,5 +1,7 @@
 .promotion-page-wrapper {
     color: white;
+    width:90%;
+    margin:auto;
 }
 
 .promotion-grid {
@@ -18,16 +20,25 @@
     padding-bottom: 20px;
     background: #eee;
     color: black;
+    border:solid;
     border-radius: 10px;
+    box-shadow: 0 0 10px #2196f3,0 0 20px #2196f3,0 0 30px #2196f3;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.plan-card form {
+    margin:auto;
 }
 
 .pp-button {
-    padding-top: 20px;
-    border: solid;
+    padding-top: 1rem;
+    margin-top:1rem;
     border-width: 2px;
-    border-style: groove;
-    max-width: 30%;
-    margin: 0 auto;
+    width:30%;
+    box-shadow: 0 0 2px #2196f3,0 0 4px #2196f3,0 0 6px #2196f3;
 }
 
 .plan-description {
@@ -44,4 +55,16 @@
 
 .new-price span {
     color: green;
+}
+
+@media only screen and (min-width:768px) and (orientation:landscape){
+    .promotion-page-wrapper {
+        width:65%;
+    }
+}
+
+@media only screen and (min-width:992px) and (orientation:landscape){
+    .promotion-page-wrapper {
+        width:70%;
+    }
 }

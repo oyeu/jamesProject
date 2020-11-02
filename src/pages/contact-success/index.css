@@ -1,0 +1,109 @@
+.success-contact-page-wrapper {
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 20vh ;
+    width:90%;
+}
+
+.success-contact-page-wrapper h1{
+    font-size: 1.5rem;
+    text-shadow: 0 0 1px #2196f3,0 0 2px #2196f3,0 0 3px #2196f3;;
+}
+
+.success-contact-page-wrapper h2{
+    font-size: 1.4rem;
+}
+
+
+.success-contact-page-wrapper .back-home-button{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+}
+    
+.success-contact-page-wrapper .back-home-button a {
+        position: relative;
+        display: inline-block;
+        padding-top: 2%;
+        padding-bottom: 2%;
+        padding-left: 20%;
+        padding-right: 20%;
+        margin: 7%;
+        margin-bottom: 10%;
+        color:white;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        text-decoration: none;
+        font-size: 1rem;
+        overflow:hidden;
+        background:#2196f3;
+        box-shadow: 0 0 10px #2196f3,0 0 40px #2196f3,0 0 80px #2196f3;
+    }   
+
+    @media only screen and (min-width:768px) and (orientation:landscape){
+        .success-contact-page-wrapper h1{
+            font-size: 1.8rem;
+        }
+        
+        .success-contact-page-wrapper h2{
+            font-size: 1.5rem;
+        }
+    }
+    
+    @media only screen and (min-width:992px) and (orientation:landscape){
+        .success-contact-page-wrapper h1{
+            font-size: 2rem;
+        }
+        
+        .success-contact-page-wrapper h2{
+            font-size: 1.8rem;
+        }
+
+        .success-contact-page-wrapper {   
+            padding-top: 25vh ;
+        }
+
+        .success-contact-page-wrapper .back-home-button a {
+            font-size: 1.1rem;
+        }
+    }
+    
+    @media only screen and (min-width:1200px) and (orientation:landscape){
+        .success-contact-page-wrapper h1{
+            font-size: 2.5rem;
+        }
+        
+        .success-contact-page-wrapper h2{
+            font-size: 2.3rem;
+        }
+
+        .success-contact-page-wrapper {   
+            padding-top: 20vh ;
+        }
+
+        .success-contact-page-wrapper .back-home-button a {
+            font-size: 1.3rem;
+        }
+    }
+    
+    @media only screen and (min-width:1400px) and (orientation:landscape){
+        .success-contact-page-wrapper h1{
+            font-size: 2.73rem;
+        }
+        
+        .success-contact-page-wrapper h2{
+            font-size: 2.5rem;
+        }
+
+        .success-contact-page-wrapper {   
+            padding-top: 15vh ;
+        }
+        .success-contact-page-wrapper .back-home-button a {
+            font-size: 1.5rem;
+        }
+    }

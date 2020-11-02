@@ -37,26 +37,8 @@ export const query = graphql`
 `
 
 const DemoPageWrapper = styled.section<any>`
-  color: white;
-  text-align: center;
-  position: relative;
-  background: #000f38;
-  overflow: hidden;
-
   ::after {
-    content: " ";
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    opacity: 0.05;
     background-image: url("${(props: any) => props.backgroundImage}");
-    background-repeat: no-repeat;
-    background-position: 50% 0;
-    background-size: cover;
   }
 `
 
@@ -65,12 +47,15 @@ const DemoPage = (props: any) => {
   return (
     <Layout>
       <PageTitleSection title={pageContent.title} />
-      <DemoPageWrapper backgroundImage={pageContent.background_image.url}>
+      <DemoPageWrapper
+        className="demo-page-wrapper"
+        backgroundImage={pageContent.background_image.url}
+      >
         <div className="demo-content">
           <RichText render={pageContent.content} />
 
           <div className="buttons-container">
-            {pageContent.button_links.map((button: any, i: any) => {
+            {pageContent.button_links.map((button: any) => {
               if (button.button_link._linkType === "Link.web") {
                 return (
                   <button

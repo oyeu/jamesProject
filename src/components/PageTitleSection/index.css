@@ -4,13 +4,14 @@
     display: block;  
     position: relative;
     margin-bottom: 1%;
+    padding-top: 0.4rem;
 
 }
 .page-title-wrapper::before {
     content: "";
     background:#ca0603 ;
     height: 5%;
-    top: 45%;
+    top: 56%;
     display: block;
     position: absolute;
     width:100%;
@@ -89,6 +90,9 @@
         display: flex;
     } 
 
+    .page-title-wrapper::before {
+        top: 50%;
+    }
 }
 
 @media only screen and (min-width:992px) and (orientation:landscape){

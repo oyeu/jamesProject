@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i|Rubik:400,400i,700,700i&display=swap');
 html {
-  
+  height: 100%;
+  background: #000f38;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -610,9 +611,9 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (orientation:portrait) {
   html {
-    font-size: 100%;
+    font-size: 1rem;
   }
 }
 
@@ -622,10 +623,10 @@ pre tt:after {
   height: 100%;
 }
 
-.header-section {
-  display: flex;
+.full-header {
+  display: none;
   background: #000f38;
-  height: 100%;
+  height: 9rem;
   padding-right: 20px;
   position: sticky;
   top: 0;
@@ -635,8 +636,311 @@ pre tt:after {
   border-color: #dcda15;
 }
 
+.full-header .nav-links {
+  display: flex;
+  margin-left: auto; 
+}
+
+.full-header .nav-links .nav-link {
+  margin: auto 0;
+}
+
+.full-header .nav-links .nav-link a{
+  color: #fff;
+  padding-left:0.3rem;
+  padding-right:0.3rem;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin: auto 0;
+
+  text-shadow: 0 0 1px #2196f3,0 0 2px #2196f3,0 0 3px #2196f3;
+      
+}
+
+.full-header .nav-links .nav-link a:hover{
+  color: #fff;
+}
+
+.full-header .logo-header {
+  height: 100%;
+}
+
+.full-header .logo-header img{
+  height: 100%;
+  margin: 0;
+}
+
+/* empieza header hamburger*/
+
+.hamburguer-header {
+  position: sticky;
+  z-index:4;
+  top:0;
+  height: 63px;
+  display: flex;
+  background:#000f38;
+  border: solid;
+  border-style: inline;
+  border-color: #dcda15;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.menu-wrap {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-left:60px;
+}
+
+.menu-wrap >a {
+  z-index: 3;
+}
+
+.menu-wrap >a >h1{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin:0;
+  color:#ca0603;
+  text-shadow: 0 0 1px#ca0603,0 0 2px#ca0603,0 0 5px #ca0603;
+}
+
+.menu-wrap a >h1 >img{
+  width:30%;
+  border-radius: 50%;
+  margin:auto;
+  margin-left:1%;
+  margin-right:1%;
+}
+
+.menu-wrap .toggler {
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 2;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  opacity: 0;
+}
+
+.menu-wrap .hamburger {
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  padding: 1rem;
+  background: #000f38;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 0px 2px#2196f3;
+}
+
+/*hamburger line*/
+
+.menu-wrap .hamburger >div {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 1px #2196f3,0 0 2px #2196f3,0 0 3px #2196f3;
+}
+
+.menu-wrap .hamburger >div::before,
+.menu-wrap .hamburger >div::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+  box-shadow: inherit;
+}
+
+.menu-wrap .hamburger >div::after {
+  top:10px;
+}
+
+/*toggler animete*/
+
+.menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+/* turn lines into x*/ 
+
+.menu-wrap .toggler:checked + .hamburger > div::before,
+.menu-wrap .toggler:checked + .hamburger > div::after {
+  top:0;
+  transform:rotate(90deg);
+}
+
+/* rotate on hover when checked */
+
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+}
+
+/* show menu */
+
+.menu-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div {
+  transform: scale(1);
+  transition-duration: 1.5s ease;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div {
+  opacity:1;
+  transition: opacity 0.4s ease;
+}
+
+.menu-wrap .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+.menu-wrap .menu > div {
+  background: rgba(0, 15, 56, 0.96);
+  width:200vw;
+  height: 200vw;
+  display: flex;
+  flex:none;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: all 0.4s ease;
+}
+
+.menu-wrap .menu >div >div {
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.menu-wrap .menu >div >div >ul {
+  margin:0;
+}
+
+.menu-wrap .menu >div >div >ul .casa-autonoma{
+  color:#eee;
+  text-decoration: none;
+  overflow:hidden;
+  background:#ca0603;
+  border-radius: 5px;
+  box-shadow: 0 0 1px #ca0603,0 0 2px #ca0603,0 0 5px #ca0603;
+  text-shadow: none;
+}
+
+.menu-wrap .menu >div >div >ul >li {
+  list-style: none;
+  color:#fff;
+  font-size: 1.5rem;
+  padding:0.5rem;
+  margin:0.5rem;
+  text-shadow: 0 0 1px #2196f3,0 0 2px #2196f3,0 0 3px #2196f3;
+}
+
+.menu-wrap .menu >div >div >ul .casa-autonoma{
+  text-decoration: none;
+  overflow:hidden;
+  background:#ca0603;
+  border-radius: 5px;
+  box-shadow: 0 0 1px #ca0603,0 0 2px #ca0603,0 0 5px #ca0603;
+  text-shadow: none;
+}
+
+.menu-wrap .menu >div >div >ul .promotion-button{
+  padding:0.5rem;
+  margin:0.5rem;
+  color:#eee;
+  text-decoration: none;
+  overflow:hidden;
+  background:#2196f3;
+  border-radius: 5px;
+  box-shadow: 0 0 1px#2196f3,0 0 2px #2196f3,0 0 5px #2196f3;
+  text-shadow: none;
+}
+
+.menu-wrap .menu >div >div >ul .demo-button{
+  padding:0.5rem;
+  margin:0.5rem;
+  color:#000f38;
+  text-decoration: none;
+  overflow:hidden;
+  background:#dcda15;
+  border-radius: 5px;
+  box-shadow: 0 0 1px #dcda15,0 0 2px #dcda15,0 0 5px #dcda15;
+  text-shadow: none;
+}
+
+
+.menu-wrap .menu >div >div >ul >li > a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.4 ease;
+}
+
+
+
+
 @media only screen and (orientation:portrait) {
-  .header-section {
-    display: none;
+  
+}
+
+@media only screen and (min-width:768px) and (orientation:landscape){
+
+}
+
+@media only screen and (min-width:992px) and (orientation:landscape){
+  .full-header {
+    display: flex;
+  }
+  .hamburguer-header{
+    display:none;
+  }
+}
+
+@media only screen and (min-width:1200px) and (orientation:landscape){
+  .full-header .nav-links .nav-link a{
+    padding-left:0.3rem;
+    padding-right:0.3rem;
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width:1400px) and (orientation:landscape){
+  .full-header .nav-links .nav-link a{
+    padding-left:0.3rem;
+    padding-right:0.3rem;
+    font-size: 1.2rem;
   }
 }

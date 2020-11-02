@@ -8,7 +8,6 @@
 import React from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 import "./layout.css"
-import styled from "styled-components"
 import "bootstrap/dist/css/bootstrap.min.css"
 import DemoButton from "../DemoButton"
 import PromotionButton from "./components/PromotionButton"
@@ -54,41 +53,6 @@ const navigationQuery = graphql`
   }
 `
 
-const NavLink = styled.div`
-  margin: auto 0;
-
-  a {
-    color: #fff;
-    padding: 0 16px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-
-    text-shadow: 0 0 5px rgba(0, 178, 255, 1), 0 0 10px rgba(0, 178, 255, 1),
-      0 0 20px rgba(0, 178, 255, 1), 0 0 40px rgba(38, 104, 127, 1),
-      0 0 80px rgba(38, 104, 127, 1), 0 0 90px rgba(38, 104, 127, 1),
-      0 0 100px rgba(38, 104, 127, 1), 0 0 140px rgba(38, 104, 127, 1),
-      0 0 180px rgba(38, 104, 127, 1);
-
-    &:hover {
-      color: #fff;
-    }
-  }
-`
-const NavLinks = styled.div`
-  margin-left: auto;
-  display: flex;
-`
-const LogoHeader = styled.div`
-  display: flex;
-
-  img {
-    width: 74%;
-    border: 1px solid #ddd;
-    height: auto;
-    margin: 0;
-  }
-`
 interface Links {
   link: { _meta: { uid: string | number | null | undefined } }
   label: React.ReactNode
@@ -107,30 +71,100 @@ const Layout = ({ children }: Props) => {
           return (
             <>
               <PromotionButton />
-              <header className="header-section">
-                <LogoHeader>
+              <header className="hamburguer-header">
+                <div className="menu-wrap">
+                  <Link to="/">
+                    <h1>
+                      ADJ
+                      <img src="logo-header-mobile.jpg" alt="" />
+                      IPTV
+                    </h1>
+                  </Link>
+                  <input type="checkbox" className="toggler" />
+                  <div className="hamburger">
+                    <div />
+                  </div>
+                  <div className="menu">
+                    <div>
+                      <div>
+                        <ul>
+                          {headerContent.navigation_links.map((link: Links) => {
+                            if (link.link._meta.uid === "inicio") {
+                              return (
+                                <li key={link.link._meta.uid}>
+                                  <Link to={`/`}>{link.label}</Link>
+                                </li>
+                              )
+                            } else {
+                              return (
+                                <li key={link.link._meta.uid}>
+                                  <Link to={`/${link.link._meta.uid}`}>
+                                    {link.label}
+                                  </Link>
+                                </li>
+                              )
+                            }
+                          })}
+                          <li className="demo-button">
+                            <Link to="/demo-page">
+                              <span />
+                              <span />
+                              <span />
+                              <span />
+                              ¡Solicita tu demo gratis!
+                            </Link>
+                          </li>
+                          <li className="promotion-button">
+                            <Link to="/promotion">
+                              <span />
+                              <span />
+                              <span />
+                              <span />
+                              ¡Ofertas!
+                            </Link>
+                          </li>
+                          <li className="casa-autonoma">
+                            <Link to="/casa-autonoma">
+                              <span />
+                              <span />
+                              <span />
+                              <span />
+                              Casa autónoma
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </header>
+              <header className="full-header">
+                <div className="logo-header">
                   <img src={headerContent.logo.url} alt="logo header" />
-                </LogoHeader>
-                <DemoButton type="header" />
-                <NavLinks>
+                </div>
+                <DemoButton
+                  className="header-demo-button"
+                  text="¡Solicita tu Demo gratis!"
+                />
+                <div className="nav-links">
                   {headerContent.navigation_links.map((link: Links) => {
                     if (link.link._meta.uid === "inicio") {
                       return (
-                        <NavLink key={link.link._meta.uid}>
+                        <div className="nav-link" key={link.link._meta.uid}>
                           <Link to={`/`}>{link.label}</Link>
-                        </NavLink>
+                        </div>
                       )
                     } else {
                       return (
-                        <NavLink key={link.link._meta.uid}>
+                        <div className="nav-link" key={link.link._meta.uid}>
                           <Link to={`/${link.link._meta.uid}`}>
                             {link.label}
                           </Link>
-                        </NavLink>
+                        </div>
                       )
                     }
                   })}
-                </NavLinks>
+                </div>
               </header>
             </>
           )

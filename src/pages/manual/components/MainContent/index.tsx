@@ -1,21 +1,10 @@
 import React from "react"
-import styled from "styled-components"
 import RichText from "../../../../components/RichText"
 import AppCard from "./components/AppItem"
 import { RichTextProps as RichTextI } from "prismic-reactjs"
 import ContactButton from "../../../promotion/components/ContactButton"
+import "./index.css"
 
-const MainContentWrapper = styled.section`
-  max-width: 1200px;
-  margin: 0 auto;
-  color: white;
-  padding: 40px 0px;
-  font-size: 20px;
-`
-
-const AppsWrapper = styled.div`
-  display: flex;
-`
 interface Props {
   iptvApps: {
     app_link: {
@@ -32,9 +21,9 @@ interface Props {
 
 const MainContent = ({ iptvApps, mainText }: Props) => {
   return (
-    <MainContentWrapper>
+    <section className="main-content-wrapper">
       <RichText render={mainText} />
-      <AppsWrapper>
+      <div className="apps-wrapper">
         {iptvApps?.map((appItem: any) => {
           return (
             <AppCard
@@ -46,9 +35,9 @@ const MainContent = ({ iptvApps, mainText }: Props) => {
             />
           )
         })}
-      </AppsWrapper>
+      </div>
       <ContactButton />
-    </MainContentWrapper>
+    </section>
   )
 }
 

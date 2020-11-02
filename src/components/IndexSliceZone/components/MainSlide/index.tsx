@@ -25,7 +25,10 @@ const mainSlide = ({ title, content, backgroundImages }: any) => {
                     <div className="slide-content">
                       <RichText render={title} />
                       {content}
-                      <DemoButton type={"main-slide"} />
+                      <DemoButton
+                        className="header-demo-button main-slide-margin"
+                        text="¡Solicita tu Demo gratis!"
+                      />
                     </div>
                   </div>
                 </SlideWrapper>

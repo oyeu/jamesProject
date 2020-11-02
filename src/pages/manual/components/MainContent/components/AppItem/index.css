@@ -1,0 +1,70 @@
+.item-wrapper {
+  margin-top: 1rem;  
+  width: 90%;
+  background: #eee;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #2196f3,0 0 10px #2196f3,0 0 15px #2196f3;
+}
+
+.item-wrapper .img-holder {
+    display: flex;
+    justify-content: center;
+  }
+
+.item-wrapper .img-holder img{
+   margin:0;
+}
+
+.item-wrapper .card-info {
+    color: black;
+}
+
+.item-wrapper .card-info h2{
+    font-size: 1.5rem;
+    margin:0;
+}
+
+.item-wrapper .card-info .app-name{
+    border-top: solid;
+    border-bottom: solid;
+    border-color: #000f38;
+    text-align: center;
+}
+
+.item-wrapper .card-info .app-content {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+.item-wrapper .card-info .app-content .app-button{
+    width: 80%;
+  margin: 0 auto;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 0 5px #ca0603,0 0 10px #ca0603,0 0 15px #ca0603;
+  }
+
+.item-wrapper .card-info .app-content .app-button a{
+    color: #000f38;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (min-width:992px) and (orientation:landscape){
+    .item-wrapper {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width:1200px) and (orientation:landscape){
+    
+}
+
+@media only screen and (min-width:1400px) and (orientation:landscape){
+    
+}

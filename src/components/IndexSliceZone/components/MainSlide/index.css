@@ -26,12 +26,16 @@
 .slide-content {
     margin: 0 auto;
     padding: 10px;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
 }
 
 .slide-content h1 {
     margin: 0px;
     font-size:1rem;
+}
+
+.slice-wrapper >div > ol {
+    z-index: 2;
 }
 
 @media only screen and (orientation:portrait) {
