@@ -120,7 +120,7 @@ const Layout = ({ children }: Props) => {
                               <span />
                               <span />
                               <span />
-                              ¡Ofertas!
+                              ¡Promociones!
                             </Link>
                           </li>
                           <li className="casa-autonoma">

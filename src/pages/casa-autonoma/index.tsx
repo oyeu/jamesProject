@@ -203,7 +203,7 @@ const CasaAutonomaPage = (props: any) => {
             </div>
             <div className="contact-button">
               <div className="btn-wrapper">
-                <Link to={"/contact-page"}>¡Empezemos!</Link>
+                <Link to={"/contact-page"}>¡Empecemos!</Link>
               </div>
             </div>
           </div>
