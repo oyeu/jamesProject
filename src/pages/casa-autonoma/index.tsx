@@ -24,11 +24,6 @@ export const query = graphql`
 `
 
 const PageWrapper = styled.section<any>`
-  color: white;
-
-  position: relative;
-  overflow: hidden;
-
   ::after {
     content: " ";
     display: block;
@@ -46,17 +41,9 @@ const PageWrapper = styled.section<any>`
   }
 
   .house-content {
-    padding-top: 20px;
-    position: relative;
-    z-index: 2;
-    max-width: 1200px;
-    margin: 0 auto;
-    font-size: 20px;
-
     .contact-section {
       display: flex;
       margin: auto;
-      padding: 20px;
       padding-bottom: 80px;
       align-items: center;
       justify-content: center;
@@ -84,7 +71,6 @@ const PageWrapper = styled.section<any>`
       div {
         width: 100%;
         margin: auto;
-        padding: 30px;
       }
 
       .section-one-image {
@@ -136,7 +122,10 @@ const CasaAutonomaPage = (props: any) => {
   return (
     <Layout>
       <PageTitleSection title={pageContent.title} />
-      <PageWrapper backgroundImage={pageContent.background_image.url}>
+      <PageWrapper
+        className="casa-page-wrapper"
+        backgroundImage={pageContent.background_image.url}
+      >
         <div className="house-content">
           <div className="section">
             <div className="section-text">

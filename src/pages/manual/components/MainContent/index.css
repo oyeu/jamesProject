@@ -10,17 +10,25 @@
     text-align: center;
 }
 
+.apps-wrapper {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height:auto;
+}
+
 @media only screen and (min-width:768px) and (orientation:landscape){
     .main-content-wrapper {
         font-size: 1rem;
     }
-    
+    .apps-wrapper {
+        flex-direction: row;
+    }
 }
 
 @media only screen and (min-width:992px) and (orientation:landscape){
-    .apps-wrapper {
-        display:flex;
-    }
+    
 
     .main-content-wrapper {
         font-size: 1.1rem;

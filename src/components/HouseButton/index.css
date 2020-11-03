@@ -11,7 +11,8 @@
 
 .house-button-wrapper a .text {
     color: #ca0603;
-    background: #eee;
+    background: linear-gradient(#ffffff, #cacaa9);
+    text-shadow: 0 0 0.2px#ca0603,0 0 0.5px#ca0603,0 0 1px #ca0603;
 }
 
 .house-button-wrapper a img {

@@ -1,64 +1,121 @@
 .item-wrapper {
-  margin-top: 1rem;  
-  width: 90%;
+  margin-top:1rem;
+  width: 80%;
   background: #eee;
   border-radius: 5px;
   box-shadow: 0 0 5px #2196f3,0 0 10px #2196f3,0 0 15px #2196f3;
+  display:flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
-.item-wrapper .img-holder {
+.item-wrapper-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-wrapper-inner .img-holder {
     display: flex;
     justify-content: center;
   }
 
-.item-wrapper .img-holder img{
+.item-wrapper-inner .img-holder img{
    margin:0;
+   width: 100%;
 }
 
-.item-wrapper .card-info {
+.item-wrapper-inner .card-info {
     color: black;
+    width:100%;
 }
 
-.item-wrapper .card-info h2{
-    font-size: 1.5rem;
-    margin:0;
+.item-wrapper-inner .card-info .app-name h2{
+    font-size: 1rem;
+    margin:auto;
 }
 
-.item-wrapper .card-info .app-name{
+.item-wrapper-inner .card-info .app-name{
     border-top: solid;
     border-bottom: solid;
     border-color: #000f38;
     text-align: center;
+    display:flex;
+    align-content: center;
+    justify-content: center;
 }
 
-.item-wrapper .card-info .app-content {
-    padding: 1rem;
-    font-size: 1rem;
+.item-wrapper-inner .card-info .app-content {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
-.item-wrapper .card-info .app-content .app-button{
+  .item-wrapper-inner .card-info .app-content p{
+    margin:0;
+  }
+
+.item-wrapper-inner .app-button{
     width: 80%;
   margin: 0 auto;
   border-radius: 5px;
   text-align: center;
   cursor: pointer;
   box-shadow: 0 0 5px #ca0603,0 0 10px #ca0603,0 0 15px #ca0603;
+  margin-bottom: 1rem;
+  display:flex;
+  align-items: center;
+  justify-content: center;
   }
 
-.item-wrapper .card-info .app-content .app-button a{
+.item-wrapper-inner .app-button a{
     color: #000f38;
     text-decoration: none;
     display: inline-block;
     width: 100%;
     height: 100%;
+    font-size: 0.8rem;
+}
+
+@media only screen and (min-width:768px) and (orientation:landscape){
+  .item-wrapper {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    align-self: flex-start;
+    margin-top:0;
+}
+
+.item-wrapper-inner .card-info .app-name{
+  height: 7vh;
+}
+
+.item-wrapper-inner .card-info .app-content {
+  height: 13vh;
+}
+
 }
 
 @media only screen and (min-width:992px) and (orientation:landscape){
-    .item-wrapper {
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
-        height: auto;
-    }
+  
+  .item-wrapper-inner .card-info .app-content {
+
+    font-size: 1rem;
+  }
+
+.item-wrapper-inner .card-info .app-name{
+  height: 5vh;
+}
+
+.item-wrapper-inner .card-info .app-content {
+  height: 12vh;
+}
+
+.item-wrapper-inner .app-button a{
+  font-size: 1rem;
+}
 }
 
 @media only screen and (min-width:1200px) and (orientation:landscape){

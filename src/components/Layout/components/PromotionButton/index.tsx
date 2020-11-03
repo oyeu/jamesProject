@@ -9,7 +9,7 @@ const query = graphql`
       allPromotion_types {
         edges {
           node {
-            promotion_subtitle
+            promotion_button_text
             show_promotion
             _meta {
               uid
@@ -31,8 +31,7 @@ const PromotionButton = () => {
           return (
             <div className="promotion-button-wrapper">
               <Link to={`/${data._meta.uid}`}>
-                <RichText render={data.promotion_subtitle} />
-                ¡Enterate aquí!
+                <RichText render={data.promotion_button_text} />
               </Link>
             </div>
           )

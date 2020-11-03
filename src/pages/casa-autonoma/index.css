@@ -1,3 +1,19 @@
+.casa-page-wrapper {
+    color: white;
+  position: relative;
+  overflow: hidden;
+ 
+}
+
+.casa-page-wrapper .house-content {
+    width:90%;
+    margin:auto;
+    padding-top: 20px;
+    position: relative;
+    z-index: 2;
+    font-size: 0.8rem;
+}
+
 .btn-wrapper {
     margin:auto;
     padding:0;
@@ -51,4 +67,10 @@
     z-index: -1;
     border-radius: 4px;
     
+}
+
+@media only screen and (min-width:768px) and (orientation:landscape) {
+    .casa-page-wrapper .house-content {
+        width:65%;
+    }
 }

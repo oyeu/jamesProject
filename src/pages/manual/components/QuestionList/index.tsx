@@ -1,27 +1,15 @@
 import React from "react"
-import styled from "styled-components"
 import RichText from "../../../../components/RichText"
 import { Accordion, Card } from "react-bootstrap"
-
-const QuestionListWrapper = styled.section`
-  max-width: 1200px;
-  margin: 0 auto;
-  color: black;
-  padding-bottom: 40px;
-
-  .q-list-title {
-    text-align: center;
-    color: white;
-  }
-`
+import "./index.css"
 
 const QuestionList = ({ title, questions }: any) => {
   return (
-    <QuestionListWrapper>
+    <section className="question-list-wrapper">
       <div className="q-list-title">
         <RichText render={title} />
       </div>
-      <Accordion>
+      <Accordion className="questions-accordion">
         {questions?.map((qItem: any) => {
           return (
             <Card key={qItem.question[0].text}>
@@ -40,7 +28,7 @@ const QuestionList = ({ title, questions }: any) => {
           )
         })}
       </Accordion>
-    </QuestionListWrapper>
+    </section>
   )
 }
 

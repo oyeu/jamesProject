@@ -1,14 +1,12 @@
 import React from "react"
-import styled from "styled-components"
 import RichText from "../../../../../../components/RichText"
 
-const QuestionItemWrapper = styled.div``
 const QuestionItem = ({ question, answer }: any) => {
   return (
-    <QuestionItemWrapper>
+    <div>
       <RichText render={question} />
       <RichText render={answer} />
-    </QuestionItemWrapper>
+    </div>
   )
 }
 

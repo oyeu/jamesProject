@@ -17,10 +17,12 @@ export const query = graphql`
             promotion_title
             show_promotion
             promotion_plan {
-              old_normal_price
+              normal_price
               promotion_price
               plan_description
               button_code
+              green_text
+              red_text
             }
           }
         }
@@ -49,12 +51,12 @@ const PromotionPage = (props: any) => {
             </div>
             <div className="plan-price">
               <div className="old-price">
-                <span>Antes</span> {promotionPlan.old_normal_price}$ con canales
-                para adultos
+                <span>{promotionPlan.red_text}</span>
+                <RichText render={promotionPlan.normal_price} />
               </div>
               <div className="new-price">
-                <span>Ahora</span> {promotionPlan.promotion_price}$ con canales
-                para adultos
+                <span>{promotionPlan.green_text}</span>{" "}
+                <RichText render={promotionPlan.promotion_price} />
               </div>
             </div>
             <div className="pp-button">
@@ -70,6 +72,7 @@ const PromotionPage = (props: any) => {
                   value={promotionPlan.button_code}
                 />
                 <input
+                  className="image"
                   type="image"
                   src="https://www.paypalobjects.com/es_XC/i/btn/btn_buynowCC_LG.gif"
                   name="submit"

@@ -10,16 +10,17 @@
     border-radius:4px;
     transition:ease-out 0.3s;
     outline:none;
-    background:linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+    background:linear-gradient(0.25turn,#000f38, #ca0603);
     font-weight:bold;
     cursor:pointer;
     font-size: 0.53rem;
+    text-align: center;
 }
 
 .promotion-button-wrapper a{
     padding:4%;
     text-decoration: none;
-    color: black;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,7 +43,7 @@
     bottom: 0;
     opacity: 0;
     content: "";
-    background:linear-gradient(#e66465, #9198e5)
+    background:linear-gradient(#ca0603, #dcda15)
     
 }
 
