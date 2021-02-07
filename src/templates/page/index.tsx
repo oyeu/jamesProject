@@ -9,6 +9,13 @@ import "./index.css"
 export const query = graphql`
   query PageQuery($id: String) {
     prismic {
+      allContact_pages {
+        edges {
+          node {
+            ws_link
+          }
+        }
+      }
       allPages(id: $id) {
         edges {
           node {
@@ -59,6 +66,7 @@ const Page = (props: any) => {
           image2={pageContent.service_image_2.url}
           image3={pageContent.service_image_3.url}
           backgroundImage={pageContent.background_image.url}
+          ws_link={props.data.prismic.allContact_pages.edges[0].node.ws_link}
         />
         <div className="pricelist-wrapper">
           {pageContent.body?.map((pricelist: any, i: any) => {

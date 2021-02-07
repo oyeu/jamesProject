@@ -21,6 +21,7 @@ const PlansPageContent = ({
   image2,
   image3,
   backgroundImage,
+  ws_link,
 }: any) => {
   return (
     <PageContentWrapper
@@ -53,7 +54,7 @@ const PlansPageContent = ({
         <button
           className="help-button"
           onClick={() => {
-            navigate("https://wa.link/0j7qpr")
+            navigate(ws_link)
           }}
         >
           WhatsApp
